@@ -1,7 +1,6 @@
 #!/bin/env node
 
 var express = require('express');
-var fs = require('fs');
 
 var SampleApp = function() {
 	var self = this;
@@ -16,17 +15,6 @@ var SampleApp = function() {
 			console.warn('No OPENSHIFT_NODEJS_IP var, using 127.0.0.1');
 			self.ipaddress = "127.0.0.1";
 		}
-	};
-
-	self.populateCache = function() {
-		self.zcache = self.zcache || {};
-
-		// Local cache for static content.
-		self.zcache['index.html'] = fs.readFileSync('./templates/index.html');
-	};
-
-	self.cache_get = function(key) {
-		return self.zcache[key];
 	};
 
 	self.terminator = function(sig){
@@ -53,31 +41,18 @@ var SampleApp = function() {
 		});
 	};
 
-	self.createRoutes = function() {
-		self.routes = {};
-
-		self.routes['/'] = function(req, res) {
-			res.setHeader('Content-Type', 'text/html');
-			res.send(self.cache_get('index.html'));
-		};
-	};
-
 	self.initializeServer = function() {
-		self.createRoutes();
 		self.app = express();
 
-		// Add handlers for the app (from the routes).
-		for (var r in self.routes) {
-			self.app.get(r, self.routes[r]);
-		}
+		self.app.use(express.compress());
+
+		self.app.use(express.static('dist/templates'));
+		self.app.use('/css', express.static('dist/css'));
 	};
 
 	self.initialize = function() {
 		self.setupVariables();
-		self.populateCache();
 		self.setupTerminationHandlers();
-
-		// Create the express server and routes.
 		self.initializeServer();
 	};
 
