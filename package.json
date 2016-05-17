@@ -1,23 +1,17 @@
 {
-	"name": "christopher-petrilla-portfolio",
-	"version": "1.0.0",
-	"description": "Portfolio site",
-	"keywords": [
-		"OpenShift",
-		"Node.js",
-		"portfolio",
-		"front-end developer"
-	],
-	"homepage": "http://www.christopherpetrilla.com/",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/cmpetrilla/portfolio"
-	},
-	"dependencies": {
-		"express": "~3.4.4"
-	},
-	"devDependencies": {},
-	"bundleDependencies": [],
-	"private": true,
-	"main": "server.js"
+  "name": "christopher-petrilla-portfolio",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cmpetrilla/portfolio"
+  },
+  "dependencies": {
+    "express": "~3.4.4",
+    "gulp": "^3.9.1"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "postinstall": "gulp"
+  },
+  "main": "server.js"
 }
