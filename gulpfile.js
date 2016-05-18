@@ -5,10 +5,11 @@ var sourcemaps = require('gulp-sourcemaps');
 var concat = require('gulp-concat');
 var cssmin = require('gulp-cssmin');
 var htmlReplace = require('gulp-html-replace');
+var clean = require('gulp-clean');
 
 var now = Date.now();
 
-gulp.task('copyTemplates', function() {
+gulp.task('compileTemplates', ['cleanTemplates'], function() {
 	return gulp.src('./resources/templates/index.html')
 		.pipe(htmlReplace({
 			'css': '/css/main' + now + '.min.css'
@@ -16,7 +17,7 @@ gulp.task('copyTemplates', function() {
 		.pipe(gulp.dest('dist/templates'));
 });
 
-gulp.task('compileLess', function () {
+gulp.task('compileStyles', ['cleanStyles'], function () {
 	return gulp.src('./resources/less/**/*.less')
 		.pipe(sourcemaps.init())
 		.pipe(less())
@@ -26,4 +27,15 @@ gulp.task('compileLess', function () {
 		.pipe(gulp.dest('./dist/css'));
 });
 
-gulp.task('default', ['copyTemplates', 'compileLess']);
+gulp.task('cleanTemplates', function() {
+	return gulp.src('./dist/templates/**/*.html', {read: false})
+		.pipe(clean());
+});
+
+gulp.task('cleanStyles', function() {
+	return gulp.src('./dist/css/**/*.css', {read: false})
+		.pipe(clean());
+});
+
+gulp.task('default', ['compileTemplates', 'compileStyles']);
+gulp.task('cleanAll', ['cleanTemplates', 'cleanStyles']);
