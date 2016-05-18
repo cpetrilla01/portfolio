@@ -6,6 +6,7 @@ var concat = require('gulp-concat');
 var cssmin = require('gulp-cssmin');
 var htmlReplace = require('gulp-html-replace');
 var clean = require('gulp-clean');
+var watch = require('gulp-watch');
 
 var now = Date.now();
 
@@ -37,5 +38,15 @@ gulp.task('cleanStyles', function() {
 		.pipe(clean());
 });
 
+gulp.task('watchTemplates', function() {
+	gulp.watch('./resources/templates/**/*.html', ['compileTemplates'])
+});
+
+
+gulp.task('watchStyles', function() {
+	gulp.watch('./resources/less/**/*.less', ['compileStyles'])
+});
+
 gulp.task('default', ['compileTemplates', 'compileStyles']);
 gulp.task('cleanAll', ['cleanTemplates', 'cleanStyles']);
+gulp.task('watchAll', ['default', 'watchTemplates', 'watchStyles']);
