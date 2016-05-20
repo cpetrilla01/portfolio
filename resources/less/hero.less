@@ -1,7 +1,7 @@
 @import 'variables.less';
 
-.hero__container {
-	padding: 3em @gutter 15em;
+.hero {
+	padding: 8em @gutter 15em;
 	color: white;
 	background-color: #0A72BA;
 }
@@ -9,7 +9,12 @@
 .hero__tagline {
 	text-align: center;
 	font-size: 2.5em;
-	margin-bottom: .6em;
+	margin: 0;
+	padding: 0;
+}
+
+.hero__tagline-container {
+	margin-bottom: .75em;
 }
 
 .hero__specialties-list {
@@ -23,13 +28,4 @@
 .hero__specialties-item {
 	display: inline-block;
 	padding: 0 .5em;
-}
-
-//todo: find polyfill to support this selector in older browsers
-.hero__specialties-item:first-child {
-	padding-left: 0;
-}
-
-.hero__specialties-item:last-child {
-	padding-right: 0;
 }
