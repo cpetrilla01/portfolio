@@ -18,6 +18,7 @@ gulp.task('compileTemplates', ['cleanTemplates'], function() {
 		.pipe(gulp.dest('dist/templates'));
 });
 
+// todo: turn off source mapping in production
 gulp.task('compileStyles', ['cleanStyles'], function () {
 	return gulp.src('./resources/less/**/*.less')
 		.pipe(sourcemaps.init())

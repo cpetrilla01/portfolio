@@ -3,31 +3,39 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<title>Portfolio - Christopher Petrilla, Front-end developer</title>
-		<meta name="description" content="Christopher Petrilla, Front-end developer portfolio site">
+		<title>Christopher Petrilla, Front-end developer</title>
+		<meta name="description" content="Christopher Petrilla, Front-end developer">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://fonts.googleapis.com/css?family=Cabin:400,600|Maven+Pro" rel="stylesheet" type="text/css">
 		<!-- build:css --><!-- endbuild -->
 	</head>
 	<body>
 		<!--[if lt IE 8]>
 			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<header>
-			<p>Christopher Petrilla</p>
-			<p>Front-end developer</p>
-			<nav>
-				<ul>
-					<li><a href="#about">About</a></li>
-					<li><a href="#skills">Skills</a></li>
-					<li><a href="#projects">Projects</a></li>
-					<!--<li><a href="#contact">Contact</a></li>-->
+		<header class="header clearfix">
+			<div class="header__primary-logo-container primary-logo">
+				<h1 class="primary-logo__name">Christopher Petrilla</h1>
+				<h2 class="primary-logo__title">Front-end engineer</h2>
+			</div>
+			<nav class="header__primary-navigation-container primary-navigation">
+				<ul class="primary-navigation__list">
+					<!--<li class="primary-navigation__item"><a class="primary-navigation__link" href="#about">About</a></li>-->
+					<li class="primary-navigation__item"><a class="primary-navigation__link" href="#skills">Skills</a></li>
+					<li class="primary-navigation__item"><a class="primary-navigation__link" href="#projects">Projects</a></li>
+					<!--<li class=primary-navigation__item><a class="primary-navigation__link" href="#contact">Contact</a></li>-->
 				</ul>
 			</nav>
 		</header>
-		<section id="about">
-			<h1>About</h1>
-			<p>Front-end, web-based developer specializing in fast, responsive sites powered by standards-based, modular code.</p>
-			<p>NYC-based front-end developer working remotely for Elsevier, Philadelphia office.</p>
+		<section id="hero" class="hero__container">
+			<p class="hero__tagline">Fast, clean, web-based apps and sites</p>
+			<!-- todo: add specialties header -->
+			<ul class="hero__specialties-list">
+				<li class="hero__specialties-item">Performance</li>
+				<li class="hero__specialties-item">Client-side apps</li>
+				<li class="hero__specialties-item">Node architecture</li>
+				<li class="hero__specialties-item">Scalability</li>
+			</ul>
 			<!-- Github -->
 			<!-- LinkedIn -->
 		</section>
@@ -35,7 +43,7 @@
 			<h1>Skills</h1>
 			<div>
 				<h2>NodeJS</h2>
-				<p>Express, Handlebars, Jade, npm, Grunt, Gulp, optimization tasks (e.g., optimized images, minified CSS/JS).</p>
+				<p>Express, Handlebars, Jade, npm, Grunt, Gulp, optimization tasks (e.g., compressed images, minified CSS/JS).</p>
 			</div>
 			<div>
 				<h2>AngularJS</h2>
@@ -74,6 +82,9 @@
 		<!--<section id="contact">-->
 			<!--<h1>Contact me</h1>-->
 			<!--<form action=""></form>-->
+		<!--</section>-->
+		<!--<section id="about">-->
+			<!--<p>NYC-based front-end developer working remotely for Elsevier, Philadelphia office.</p>-->
 		<!--</section>-->
 		<footer>
 			<small>&copy;2016 Christopher Petrilla</small>
