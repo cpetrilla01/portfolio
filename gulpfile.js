@@ -3,7 +3,7 @@ var less = require('gulp-less');
 var rename = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
 var concat = require('gulp-concat');
-var cssmin = require('gulp-cssmin');
+var cleanCSS = require('gulp-clean-css');
 var htmlReplace = require('gulp-html-replace');
 var clean = require('gulp-clean');
 var watch = require('gulp-watch');
@@ -24,7 +24,7 @@ gulp.task('compileStyles', ['cleanStyles'], function () {
 		.pipe(sourcemaps.init())
 		.pipe(less())
 		.pipe(concat('main' + now + '.min.css'))
-		.pipe(cssmin())
+		.pipe(cleanCSS())
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('./dist/css'));
 });
