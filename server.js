@@ -48,6 +48,7 @@ var SampleApp = function() {
 
 		self.app.use(express.static('dist/templates'));
 		self.app.use('/css', express.static('dist/css'));
+		self.app.use('/img', express.static('dist/img'));
 	};
 
 	self.initialize = function() {

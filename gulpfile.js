@@ -7,6 +7,7 @@ var cleanCSS = require('gulp-clean-css');
 var htmlReplace = require('gulp-html-replace');
 var clean = require('gulp-clean');
 var watch = require('gulp-watch');
+var imagemin = require('gulp-imagemin');
 
 var now = Date.now();
 
@@ -27,6 +28,12 @@ gulp.task('compileStyles', ['cleanStyles'], function () {
 		.pipe(cleanCSS())
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('./dist/css'));
+});
+
+gulp.task('copyImages', function() {
+	return gulp.src('./resources/img/**/*.png')
+		.pipe(imagemin())
+		.pipe(gulp.dest('./dist/img'));
 });
 
 gulp.task('cleanTemplates', function() {
