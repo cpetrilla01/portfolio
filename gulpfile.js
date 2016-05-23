@@ -4,18 +4,20 @@ var rename = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
 var concat = require('gulp-concat');
 var cleanCSS = require('gulp-clean-css');
-var htmlReplace = require('gulp-html-replace');
+var htmlreplace = require('gulp-html-replace');
 var clean = require('gulp-clean');
 var watch = require('gulp-watch');
 var imagemin = require('gulp-imagemin');
+var htmlclean = require('gulp-htmlclean');
 
 var now = Date.now();
 
 gulp.task('compileTemplates', ['cleanTemplates'], function() {
 	return gulp.src('./resources/templates/index.html')
-		.pipe(htmlReplace({
+		.pipe(htmlreplace({
 			'css': '/css/main' + now + '.min.css'
 		}))
+		.pipe(htmlclean())
 		.pipe(gulp.dest('dist/templates'));
 });
 
