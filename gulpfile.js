@@ -9,8 +9,11 @@ var clean = require('gulp-clean');
 var watch = require('gulp-watch');
 var imagemin = require('gulp-imagemin');
 var htmlclean = require('gulp-htmlclean');
+var gutil = require('gulp-util');
 
 var now = Date.now();
+
+var prod = gutil.env.prod === true;
 
 gulp.task('compileTemplates', ['cleanTemplates'], function() {
 	return gulp.src('./resources/templates/index.html')
@@ -21,14 +24,13 @@ gulp.task('compileTemplates', ['cleanTemplates'], function() {
 		.pipe(gulp.dest('dist/templates'));
 });
 
-// todo: turn off source mapping in production
 gulp.task('compileStyles', ['cleanStyles'], function () {
 	return gulp.src('./resources/less/**/*.less')
-		.pipe(sourcemaps.init())
+		.pipe(prod ? gutil.noop() : sourcemaps.init())
 		.pipe(less())
 		.pipe(concat('main' + now + '.min.css'))
 		.pipe(cleanCSS())
-		.pipe(sourcemaps.write())
+		.pipe(prod ? gutil.noop() : sourcemaps.write())
 		.pipe(gulp.dest('./dist/css'));
 });
 
@@ -52,7 +54,6 @@ gulp.task('watchTemplates', function() {
 	gulp.watch('./resources/templates/**/*.html', ['compileTemplates'])
 });
 
-
 gulp.task('watchStyles', function() {
 	gulp.watch('./resources/less/**/*.less', ['compileStyles'])
 });
@@ -60,3 +61,4 @@ gulp.task('watchStyles', function() {
 gulp.task('default', ['compileTemplates', 'compileStyles']);
 gulp.task('cleanAll', ['cleanTemplates', 'cleanStyles']);
 gulp.task('watchAll', ['default', 'watchTemplates', 'watchStyles']);
+gulp.task('deploy', ['compileTemplates', 'compileStyles', 'copyImages']);
