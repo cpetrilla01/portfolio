@@ -7,11 +7,23 @@
   },
   "dependencies": {
     "express": "~3.4.4",
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-clean-css": "^2.0.7",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-html-replace": "^1.5.5",
+    "gulp-htmlclean": "^2.7.6",
+    "gulp-imagemin": "^3.0.1",
+    "gulp-less": "^3.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-util": "^3.0.7",
+    "gulp-watch": "^4.3.5"
   },
   "scripts": {
     "start": "node server.js",
-    "postinstall": "gulp"
+    "postinstall": "gulp deploy --env=prod"
   },
   "main": "server.js"
 }

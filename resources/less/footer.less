@@ -1,0 +1,36 @@
+.footer {
+	color: white;
+	background-color: #444;
+}
+
+.footer__copyright {
+	font-size: .875em;
+}
+
+.footer__tools-container {
+	font-size: .875em;
+}
+
+.footer__tools-para {
+	display: inline-block;
+}
+
+.footer__tools-list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+}
+
+
+// todo: add support for these selectors in older IE
+.footer__tools-item {
+	display: inline-block;
+	padding: 0 .25em;
+	&:first-child {
+		padding-left: .5em;
+	}
+	&:last-child {
+		padding-right: 0;
+	}
+}
