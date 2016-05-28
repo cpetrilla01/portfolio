@@ -16,7 +16,6 @@
 }
 
 .footer__tools-list {
-	list-style-type: none;
 	margin: 0;
 	padding: 0;
 	display: inline-block;
@@ -32,5 +31,9 @@
 	}
 	&:last-child {
 		padding-right: 0;
+	}
+	&:before {
+		content: '\2022';
+		padding-right: .25em;
 	}
 }
