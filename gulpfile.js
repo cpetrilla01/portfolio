@@ -27,10 +27,6 @@ var config = {
 		source: './app/img/**/*.{png,gif,jpg}',
 		destination: './dist/img',
 		relativeUrl: '/img/'
-	},
-	assets: {
-		source: './assets/use/**/*.{png,gif,jpg}',
-		destination: './app/img'
 	}
 };
 
@@ -73,9 +69,9 @@ var watchStyles = function() {
 var optimizeImages = function() {
 	var imagemin = require('gulp-imagemin');
 	
-	return gulp.src(config.assets.source)
+	return gulp.src(config.images.source)
 		.pipe(imagemin())
-		.pipe(gulp.dest(config.assets.destination));
+		.pipe(gulp.dest(config.images.destination));
 };
 
 gulp.task('compileTemplates', compileTemplates);
