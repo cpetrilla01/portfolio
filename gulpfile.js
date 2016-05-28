@@ -1,64 +1,85 @@
 var gulp = require('gulp');
 var less = require('gulp-less');
-var rename = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
 var concat = require('gulp-concat');
 var cleanCSS = require('gulp-clean-css');
-var htmlreplace = require('gulp-html-replace');
-var clean = require('gulp-clean');
 var watch = require('gulp-watch');
-var imagemin = require('gulp-imagemin');
 var htmlclean = require('gulp-htmlclean');
+var template = require('gulp-template');
 var gutil = require('gulp-util');
 
 var now = Date.now();
+var prod = gutil.env.env === 'prod';
+var config = {
+	templates: {
+		source: './app/templates/**/*.html',
+		destination: './dist/templates'
+	},
+	styles: {
+		source: './app/less/**/*.less',
+		destination: './dist/css',
+		relativeUrl: '/css/',
+		filename: (function() {
+			return prod ? 'main' + now + '.min.css' : 'main.min.css';
+		})()
+	},
+	images: {
+		source: './app/img/**/*.{png,gif,jpg}',
+		destination: './dist/img',
+		relativeUrl: '/img/'
+	}
+};
 
-var prod = gutil.env.prod === true;
 
-gulp.task('compileTemplates', ['cleanTemplates'], function() {
-	return gulp.src('./resources/templates/index.html')
-		.pipe(htmlreplace({
-			'css': '/css/main' + now + '.min.css'
-		}))
+// Shared tasks between dev and prod
+var compileTemplates = function() {
+	var cssPath = config.styles.relativeUrl + config.styles.filename;
+
+	return gulp.src(config.templates.source)
+		.pipe(template({cssPath: cssPath}))
 		.pipe(htmlclean())
-		.pipe(gulp.dest('dist/templates'));
-});
+		.pipe(gulp.dest(config.templates.destination));
+};
 
-gulp.task('compileStyles', ['cleanStyles'], function () {
-	return gulp.src('./resources/less/**/*.less')
+var compileStyles = function() {
+	return gulp.src(config.styles.source)
 		.pipe(prod ? gutil.noop() : sourcemaps.init())
 		.pipe(less())
-		.pipe(concat('main' + now + '.min.css'))
+		.pipe(concat(config.styles.filename))
 		.pipe(cleanCSS())
 		.pipe(prod ? gutil.noop() : sourcemaps.write())
-		.pipe(gulp.dest('./dist/css'));
-});
+		.pipe(gulp.dest(config.styles.destination));
+};
 
-gulp.task('copyImages', function() {
-	return gulp.src('./resources/img/**/*.png')
+var copyImages = function() {
+	return gulp.src(config.images.source)
+		.pipe(gulp.dest(config.images.destination));
+};
+
+
+// Dev-only tasks
+var watchTemplates = function() {
+	gulp.watch(config.templates.source, ['compileTemplates']);
+};
+
+var watchStyles = function() {
+	gulp.watch(config.styles.source, ['compileStyles']);
+};
+
+var optimizeImages = function() {
+	var imagemin = require('gulp-imagemin');
+	
+	return gulp.src(config.images.source)
 		.pipe(imagemin())
-		.pipe(gulp.dest('./dist/img'));
-});
+		.pipe(gulp.dest(config.images.destination));
+};
 
-gulp.task('cleanTemplates', function() {
-	return gulp.src('./dist/templates/**/*.html', {read: false})
-		.pipe(clean());
-});
+gulp.task('compileTemplates', compileTemplates);
+gulp.task('compileStyles', compileStyles);
+gulp.task('copyImages', copyImages);
+gulp.task('watchTemplates', watchTemplates);
+gulp.task('watchStyles', watchStyles);
+gulp.task('optimizeImages', optimizeImages);
 
-gulp.task('cleanStyles', function() {
-	return gulp.src('./dist/css/**/*.css', {read: false})
-		.pipe(clean());
-});
-
-gulp.task('watchTemplates', function() {
-	gulp.watch('./resources/templates/**/*.html', ['compileTemplates'])
-});
-
-gulp.task('watchStyles', function() {
-	gulp.watch('./resources/less/**/*.less', ['compileStyles'])
-});
-
-gulp.task('default', ['compileTemplates', 'compileStyles']);
-gulp.task('cleanAll', ['cleanTemplates', 'cleanStyles']);
+gulp.task('default', ['compileTemplates', 'compileStyles', 'copyImages']);
 gulp.task('watchAll', ['default', 'watchTemplates', 'watchStyles']);
-gulp.task('deploy', ['compileTemplates', 'compileStyles', 'copyImages']);
