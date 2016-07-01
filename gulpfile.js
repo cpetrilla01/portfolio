@@ -4,7 +4,6 @@ var sourcemaps = require('gulp-sourcemaps');
 var concat = require('gulp-concat');
 var cleanCSS = require('gulp-clean-css');
 var watch = require('gulp-watch');
-var htmlclean = require('gulp-htmlclean');
 var template = require('gulp-template');
 var gutil = require('gulp-util');
 
@@ -37,7 +36,6 @@ var compileTemplates = function() {
 
 	return gulp.src(config.templates.source)
 		.pipe(template({cssPath: cssPath}))
-		.pipe(htmlclean())
 		.pipe(gulp.dest(config.templates.destination));
 };
 
