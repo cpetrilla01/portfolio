@@ -11,7 +11,7 @@ var now = Date.now();
 var prod = gutil.env.env === 'prod';
 var config = {
 	templates: {
-		source: './app/templates/**/*.html',
+		source: './app/templates/**/*.hbs',
 		destination: './dist/templates'
 	},
 	styles: {
