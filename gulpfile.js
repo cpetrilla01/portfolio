@@ -35,7 +35,7 @@ var compileTemplates = function() {
 	var cssPath = config.styles.relativeUrl + config.styles.filename;
 
 	return gulp.src(config.templates.source)
-		.pipe(prod ? preprocess({prod: true}) : preprocess({dev: true}))
+		.pipe(prod ? preprocess({context: {prod: true}}) : preprocess({context: {dev: true}}))
 		.pipe(template({cssPath: cssPath}))
 		.pipe(htmlclean())
 		.pipe(gulp.dest(config.templates.destination));
