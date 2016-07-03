@@ -16,6 +16,10 @@ var config = {
 		source: './app/templates/**/*.hbs',
 		destination: './dist/templates'
 	},
+	static: {
+		source: './app/static-root/**/*.*',
+		destination: './dist/static-root'
+	},
 	styles: {
 		source: './app/less/**/*.less',
 		destination: './dist/css',
@@ -39,6 +43,11 @@ var compileTemplates = function() {
 		.pipe(template({cssPath: cssPath}))
 		.pipe(htmlclean())
 		.pipe(gulp.dest(config.templates.destination));
+};
+
+var copyStaticAssets = function() {
+	return gulp.src(config.static.source)
+		.pipe(config.static.destination);
 };
 
 var compileStyles = function() {
@@ -75,11 +84,12 @@ var optimizeImages = function() {
 };
 
 gulp.task('compileTemplates', compileTemplates);
+gulp.task('copyStaticAssets', copyStaticAssets);
 gulp.task('compileStyles', compileStyles);
 gulp.task('copyImages', copyImages);
 gulp.task('watchTemplates', watchTemplates);
 gulp.task('watchStyles', watchStyles);
 gulp.task('optimizeImages', optimizeImages);
 
-gulp.task('default', ['compileTemplates', 'compileStyles', 'copyImages']);
+gulp.task('default', ['compileTemplates', 'copyStaticAssets', 'compileStyles', 'copyImages']);
 gulp.task('watchAll', ['default', 'watchTemplates', 'watchStyles']);
