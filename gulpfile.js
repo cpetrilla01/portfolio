@@ -6,22 +6,21 @@ var cleanCSS = require('gulp-clean-css');
 var watch = require('gulp-watch');
 var htmlclean = require('gulp-htmlclean');
 var template = require('gulp-template');
+var preprocess = require ('gulp-preprocess');
 var gutil = require('gulp-util');
 
 var now = Date.now();
 var prod = gutil.env.env === 'prod';
 var config = {
 	templates: {
-		source: './app/templates/**/*.html',
+		source: './app/templates/**/*.hbs',
 		destination: './dist/templates'
 	},
 	styles: {
 		source: './app/less/**/*.less',
 		destination: './dist/css',
 		relativeUrl: '/css/',
-		filename: (function() {
-			return prod ? 'main' + now + '.min.css' : 'main.min.css';
-		})()
+		filename: prod ? 'main' + now + '.min.css' : 'main.min.css'
 	},
 	images: {
 		source: './app/img/**/*.{png,gif,jpg}',
@@ -36,6 +35,7 @@ var compileTemplates = function() {
 	var cssPath = config.styles.relativeUrl + config.styles.filename;
 
 	return gulp.src(config.templates.source)
+		.pipe(prod ? preprocess({context: {prod: true}}) : preprocess({context: {dev: true}}))
 		.pipe(template({cssPath: cssPath}))
 		.pipe(htmlclean())
 		.pipe(gulp.dest(config.templates.destination));

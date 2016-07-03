@@ -1,6 +1,8 @@
 #!/bin/env node
 
+const path = require('path');
 var express = require('express');
+var exphbs  = require('express-handlebars');
 
 var SampleApp = function() {
 	var self = this;
@@ -42,11 +44,23 @@ var SampleApp = function() {
 	};
 
 	self.initializeServer = function() {
-		self.app = express();
+		var hbs = exphbs.create({
+			extname: '.hbs',
+			defaultLayout: 'main',
+			layoutsDir: path.join(__dirname, 'dist', 'templates', 'layouts')
+		});
 
+		self.app = express();
 		self.app.use(express.compress());
 
-		self.app.use(express.static('dist/templates'));
+		self.app.set('views', path.join(__dirname, 'dist', 'templates', 'partials'));
+		self.app.engine('.hbs', hbs.engine);
+		self.app.set('view engine', '.hbs');
+
+		self.app.get('/', function (req, res) {
+			res.render('index');
+		});
+
 		self.app.use('/css', express.static('dist/css'));
 		self.app.use('/img', express.static('dist/img'));
 	};
