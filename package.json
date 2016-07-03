@@ -24,7 +24,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "postinstall": "gulp --env=prod"
+    "postinstall": "gulp"
   },
   "main": "server.js"
 }
