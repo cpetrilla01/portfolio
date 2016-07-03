@@ -61,6 +61,7 @@ var SampleApp = function() {
 			res.render('index');
 		});
 
+		self.app.use('/', express.static('dist/static-root'));
 		self.app.use('/css', express.static('dist/css'));
 		self.app.use('/img', express.static('dist/img'));
 	};

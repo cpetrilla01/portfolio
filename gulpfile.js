@@ -47,7 +47,7 @@ var compileTemplates = function() {
 
 var copyStaticAssets = function() {
 	return gulp.src(config.static.source)
-		.pipe(config.static.destination);
+		.pipe(gulp.dest(config.static.destination));
 };
 
 var compileStyles = function() {
