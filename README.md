@@ -2,7 +2,6 @@
 
 1. Clone this repo.
 2. In the directory above, run `npm-install`.
-3. Run the default `gulp` task.
 
 # Developing new features
 
