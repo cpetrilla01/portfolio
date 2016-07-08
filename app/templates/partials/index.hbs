@@ -14,20 +14,7 @@
 		<!--[if lt IE 8]>
 			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<header class="section section--header header">
-			<h1 class="header__primary-logo-container primary-logo">
-				<span class="primary-logo__name">Christopher Petrilla</span>
-				<span class="primary-logo__title">Front-end engineer</span>
-			</h1>
-			<!--<nav class="header__primary-navigation-container primary-navigation">-->
-				<!--<ul class="primary-navigation__list">-->
-					<!--<li class="primary-navigation__item"><a class="primary-navigation__link" href="#about">About</a></li>-->
-					<!--<li class="primary-navigation__item"><a class="primary-navigation__link" href="#skills">Skills</a></li>-->
-					<!--<li class="primary-navigation__item"><a class="primary-navigation__link" href="#projects">Projects</a></li>-->
-					<!--<li class=primary-navigation__item><a class="primary-navigation__link" href="#contact">Contact</a></li>-->
-				<!--</ul>-->
-			<!--</nav>-->
-		</header>
+		{{> header}}
 		<section id="hero" class="section section--hero hero">
 			<div class="hero__tagline-container">
 				<p class="hero__tagline">Fast, clean, web-based apps and sites</p>
@@ -112,20 +99,6 @@
 			<!--Github link-->
 			<!--LinkedIn link-->
 		<!--</section>-->
-		<footer class="section section--footer footer">
-			<small class="footer__copyright">&copy;2016 Christopher Petrilla</small>
-			<div class="footer__tools-container">
-				<p class="footer__tools-para">Made with obsessive attention to detail and:</p>
-				<ul class="footer__tools-list">
-					<li class="footer__tools-item">OpenShift hosting</li>
-					<li class="footer__tools-item">Node</li>
-					<li class="footer__tools-item">Express</li>
-					<li class="footer__tools-item">Gulp</li>
-					<li class="footer__tools-item">LESS</li>
-					<li class="footer__tools-item">BEM naming conventions</li>
-				</ul>
-			</div>
-		</footer>
-		<!-- @ifdef prod --><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='https://www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create','UA-21656130-1','auto');ga('send','pageview');</script><!-- @endif -->
+		{{> footer}}
 	</body>
 </html>

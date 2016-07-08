@@ -47,7 +47,8 @@ var SampleApp = function() {
 		var hbs = exphbs.create({
 			extname: '.hbs',
 			defaultLayout: 'main',
-			layoutsDir: path.join(__dirname, 'dist', 'templates', 'layouts')
+			layoutsDir: path.join(__dirname, 'dist', 'templates', 'layouts'),
+			partialsDir: path.join(__dirname, 'dist', 'templates', 'partials')
 		});
 
 		self.app = express();
