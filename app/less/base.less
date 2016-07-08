@@ -1,5 +1,9 @@
+@import 'variables.less';
+
 html {
 	box-sizing: border-box;
+	min-height: 100%;
+	position: relative;
 }
 
 *, *:before, *:after {
@@ -8,4 +12,5 @@ html {
 
 body {
 	font-family: 'Source Sans Pro', sans-serif;
+	padding-bottom: @footer-height;
 }
