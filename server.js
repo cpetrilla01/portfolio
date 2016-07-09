@@ -59,7 +59,10 @@ var SampleApp = function() {
 		self.app.set('view engine', '.hbs');
 
 		self.app.get('/', function (req, res) {
-			res.render('index');
+			res.render('index', {
+				pageTitle: 'Christopher Petrilla, Front-end engineer',
+				metaDescription: 'Portfolio for Christopher Petrilla, a NYC-based front-end engineer. Expertise with Node, Express, Angular, and performance.'
+			});
 		});
 
 		self.app.use('/', express.static('dist/static-root'));
