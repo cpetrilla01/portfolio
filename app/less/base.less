@@ -8,9 +8,17 @@ html {
 
 *, *:before, *:after {
 	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
 }
 
 body {
+	color: @body-text-color;
 	font-family: 'Source Sans Pro', sans-serif;
-	padding-bottom: @footer-height;
+}
+
+a {
+	&:focus {
+		outline: 1px dotted #c0c0c0;
+	}
 }

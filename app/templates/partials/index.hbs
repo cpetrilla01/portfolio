@@ -1,65 +1,64 @@
-<section id="hero" class="section section--hero hero">
-	<div class="hero__tagline-container">
-		<p class="hero__tagline">Fast, clean, web-based apps and sites</p>
-	</div>
-	<h2 class="u-visuallyhidden">Specialties</h2>
-	<ul class="hero__specialties-list">
-		<li class="hero__specialties-item">Performance</li>
-		<li class="hero__specialties-item">Client-side apps</li>
-		<li class="hero__specialties-item">Node architecture</li>
-		<li class="hero__specialties-item">Scalability</li>
-	</ul>
-</section>
-<section id="skills" class="section section--skills skills">
-	<h2 class="skills__header">Skills</h2>
-	<div class="skills__content-column">
-		<div class="skills__item media">
-			<div class="sprite node media__figure"></div>
-			<div class="media__body-container">
-				<h3 class="media__body-heading">Node</h3>
-				<p class="media__body-content">Express, Handlebars, Jade, npm, Grunt, Gulp, optimization tasks (e.g., compressed images, minified CSS/JS).</p>
-			</div>
-		</div>
-		<div class="skills__item media">
-			<div class="sprite angular media__figure"></div>
-			<div class="media__body-container">
-				<h3 class="media__body-heading">Angular</h3>
-				<p class="media__body-content">Services, directives, controllers, templates, filters.</p>
-			</div>
-		</div>
-		<div class="skills__item media">
-			<div class="sprite javascript media__figure"></div>
-			<div class="media__body-container">
-				<h3 class="media__body-heading">JavaScript</h3>
-				<p class="media__body-content">Object-oriented programming, MVC architecture, DOM manipulation (jQuery).</p>
-			</div>
-		</div>
-	</div>
-	<div class="skills__content-column">
-		<div class="skills__item media">
-			<div class="sprite html media__figure"></div>
-			<div class="media__body-container">
-				<h3 class="media__body-heading">HTML5</h3>
-				<p class="media__body-content">Semantic, accessible markup, new attributes and elements, cross-browser polyfills.</p>
-			</div>
-		</div>
-		<div class="skills__item media">
-			<div class="sprite css media__figure"></div>
-			<div class="media__body-container">
-				<h3 class="media__body-heading">CSS3</h3>
-				<p class="media__body-content">CSS3 selectors, cross-browser polyfills, SASS, LESS, naming conventions (OOCSS, SMACSS, BEM), responsive design, media queries, sprites.</p>
-			</div>
-		</div>
-		<div class="skills__item media">
-			<div class="sprite github media__figure"></div>
-			<div class="media__body-container">
-				<h3 class="media__body-heading">Git/Github</h3>
-				<p class="media__body-content">Peer review via pull requests, branching.</p>
-			</div>
-		</div>
+<section class="o-column-container c-section c-section__hero">
+	{{>header}}
+	<div class="o-column-container u-vertical-center">
+		<p class="c-hero__tagline u-text-center">Fast, clean, web-based apps and sites</p>
+		<h2 class="u-visuallyhidden">Specialties</h2>
+		<ul class="o-row-container c-hero__specialties-list u-unstyled-list u-center">
+			<li class="c-hero__specialties-item">Performance</li>
+			<li class="c-hero__specialties-item">Client-side apps</li>
+			<li class="c-hero__specialties-item">Node architecture</li>
+			<li class="c-hero__specialties-item">Scalability</li>
+		</ul>
 	</div>
 </section>
-<!--<section id="projects" class="section">-->
+<section class="c-section">
+	<h2 class="u-text-center c-section__heading">Skills</h2>
+	<div class="o-row-container c-skill__content">
+		<div class="o-column-container c-skill__item u-text-center">
+			<div class="c-sprite c-sprite--node u-center"></div>
+			<div>
+				<h3 class="c-skill__heading">Node</h3>
+				<p>Express, Handlebars, Jade, npm, Grunt, Gulp, optimization tasks (e.g., compressed images, minified CSS/JS).</p>
+			</div>
+		</div>
+		<div class="o-column-container c-skill__item u-text-center">
+			<div class="c-sprite c-sprite--angular u-center"></div>
+			<div>
+				<h3 class="c-skill__heading">Angular</h3>
+				<p>Services, directives, controllers, templates, filters.</p>
+			</div>
+		</div>
+		<div class="o-column-container c-skill__item u-text-center">
+			<div class="c-sprite c-sprite--javascript u-center"></div>
+			<div>
+				<h3 class="c-skill__heading">JavaScript</h3>
+				<p>Object-oriented programming, MVC architecture, DOM manipulation (jQuery).</p>
+			</div>
+		</div>
+		<div class="o-column-container c-skill__item u-text-center">
+			<div class="c-sprite c-sprite--html u-center"></div>
+			<div>
+				<h3 class="c-skill__heading">HTML5</h3>
+				<p>Semantic, accessible markup, new attributes and elements, cross-browser polyfills.</p>
+			</div>
+		</div>
+		<div class="o-column-container c-skill__item u-text-center">
+			<div class="c-sprite c-sprite--css u-center"></div>
+			<div>
+				<h3 class="c-skill__heading">CSS3</h3>
+				<p>CSS3 selectors, cross-browser polyfills, SASS, LESS, naming conventions (OOCSS, SMACSS, BEM), responsive design, media queries, sprites.</p>
+			</div>
+		</div>
+		<div class="o-column-container c-skill__item u-text-center">
+			<div class="c-sprite c-sprite--github u-center"></div>
+			<div>
+				<h3 class="c-skill__heading">Git/Github</h3>
+				<p>Peer review via pull requests, branching.</p>
+			</div>
+		</div>
+	</div>
+</section>
+<!--<section id="projects" class="c-section">-->
 	<!--<h1>Projects</h1>-->
 	<!--<div>-->
 		<!--<h2>Apothecary</h2>-->
