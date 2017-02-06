@@ -21,11 +21,11 @@ var SampleApp = function() {
 
 	self.terminator = function(sig){
 		if (typeof sig === "string") {
-			console.log('%s: Received %s - terminating sample app ...', Date(Date.now()), sig);
+			console.log('%s: Received %s - terminating sample app ...', new Date(Date.now()), sig);
 			process.exit(1);
 		}
 
-		console.log('%s: Node server stopped.', Date(Date.now()));
+		console.log('%s: Node server stopped.', new Date(Date.now()));
 	};
 
 	self.setupTerminationHandlers = function(){
@@ -61,7 +61,8 @@ var SampleApp = function() {
 		self.app.get('/', function (req, res) {
 			res.render('index', {
 				pageTitle: 'Christopher Petrilla, Front-end engineer',
-				metaDescription: 'Portfolio for Christopher Petrilla, a NYC-based front-end engineer. Expertise with Node, Express, Angular, and performance.'
+				metaDescription: 'Portfolio for Christopher Petrilla, a NYC-based front-end engineer. Expertise with Node, Express, Angular, and performance.',
+				copyrightYear: new Date().getFullYear()
 			});
 		});
 
@@ -71,7 +72,8 @@ var SampleApp = function() {
 
 		self.app.use(function(req, res) {
 			res.render('404', {
-				pageTitle: 'Christopher Petrilla'
+				pageTitle: 'Christopher Petrilla',
+				copyrightYear: new Date().getFullYear()
 			});
 		});
 	};
@@ -85,7 +87,7 @@ var SampleApp = function() {
 	self.start = function() {
 		// Start the app on the specific interface (and port).
 		self.app.listen(self.port, self.ipaddress, function() {
-			console.log('%s: Node server started on %s:%d ...', Date(Date.now() ), self.ipaddress, self.port);
+			console.log('%s: Node server started on %s:%d ...', new Date(Date.now() ), self.ipaddress, self.port);
 		});
 	};
 };
