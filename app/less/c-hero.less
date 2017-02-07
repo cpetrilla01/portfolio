@@ -1,5 +1,19 @@
 @import 'variables.less';
 
+.c-hero {
+	background-color: @blue;
+	color: white;
+	& a {
+		color: inherit;
+		text-decoration: none;
+	}
+	& a:hover,
+	& a:active,
+	& a:focus {
+		color: inherit;
+	}
+}
+
 .c-hero__tagline {
 	font-size: 2.5rem;
 	padding-bottom: .4em;

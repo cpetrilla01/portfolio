@@ -1,3 +1,5 @@
+@import 'variables.less';
+
 .o-row-container {
 	display: flex;
 	flex-direction: row;
@@ -7,4 +9,15 @@
 .o-column-container {
 	display: flex;
 	flex-direction: column;
+}
+
+.o-full-section {
+	min-height: 100vh;
+	padding: 2rem @gutter;
+	width: 100%;
+}
+
+.o-section {
+	padding: 2rem @gutter;
+	width: 100%;
 }
