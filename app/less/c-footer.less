@@ -1,6 +1,9 @@
+@import 'variables.less';
+
 .c-footer {
 	background-color: #444;
 	color: white;
+	padding: 2em @gutter;
 	& a {
 		color: inherit;
 		text-decoration: none;
@@ -10,6 +13,11 @@
 	& a:focus {
 		color: inherit;
 	}
+}
+
+.c-footer--no-overflow {
+	padding: 0;
+	background-color: inherit;
 }
 
 .c-footer__copyright {
