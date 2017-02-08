@@ -54,7 +54,7 @@ var SampleApp = function() {
 		self.app = express();
 		self.app.use(express.compress());
 
-		self.app.set('views', path.join(__dirname, 'dist', 'templates', 'partials'));
+		self.app.set('views', path.join(__dirname, 'dist', 'templates', 'views'));
 		self.app.engine('.hbs', hbs.engine);
 		self.app.set('view engine', '.hbs');
 
