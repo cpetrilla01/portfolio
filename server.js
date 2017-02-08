@@ -72,9 +72,8 @@ var SampleApp = function() {
 
 		self.app.use(function(req, res) {
 			res.render('404', {
-				pageTitle: 'Christopher Petrilla',
-				copyrightYear: new Date().getFullYear(),
-				layout: '404'
+				pageTitle: 'Christopher Petrilla, Front-end engineer',
+				copyrightYear: new Date().getFullYear()
 			});
 		});
 	};
