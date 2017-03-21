@@ -71,7 +71,7 @@ var SampleApp = function() {
 		self.app.use('/img', express.static('dist/img'));
 
 		self.app.use(function(req, res) {
-			res.render('404', {
+			res.status(404).render('404', {
 				pageTitle: 'Christopher Petrilla, Front-end engineer',
 				copyrightYear: new Date().getFullYear()
 			});
