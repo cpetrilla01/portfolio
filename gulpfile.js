@@ -8,6 +8,7 @@ var htmlclean = require('gulp-htmlclean');
 var template = require('gulp-template');
 var preprocess = require ('gulp-preprocess');
 var gutil = require('gulp-util');
+var image = require('gulp-image');
 
 var now = Date.now();
 var prod = process.env.npm_config_production;
@@ -33,8 +34,6 @@ var config = {
 	}
 };
 
-
-// Shared tasks between dev and prod
 var compileTemplates = function() {
 	var cssPath = config.styles.relativeUrl + config.styles.filename;
 
@@ -60,13 +59,12 @@ var compileStyles = function() {
 		.pipe(gulp.dest(config.styles.destination));
 };
 
-var copyImages = function() {
+var optimizeImages = function() {
 	return gulp.src(config.images.source)
+		.pipe(image())
 		.pipe(gulp.dest(config.images.destination));
 };
 
-
-// Dev-only tasks
 var watchTemplates = function() {
 	gulp.watch(config.templates.source, ['compileTemplates']);
 };
@@ -75,21 +73,12 @@ var watchStyles = function() {
 	gulp.watch(config.styles.source, ['compileStyles']);
 };
 
-var optimizeImages = function() {
-	var imagemin = require('gulp-imagemin');
-	
-	return gulp.src(config.images.source)
-		.pipe(imagemin())
-		.pipe(gulp.dest(config.images.destination));
-};
-
 gulp.task('compileTemplates', compileTemplates);
 gulp.task('copyStaticAssets', copyStaticAssets);
 gulp.task('compileStyles', compileStyles);
-gulp.task('copyImages', copyImages);
 gulp.task('watchTemplates', watchTemplates);
 gulp.task('watchStyles', watchStyles);
 gulp.task('optimizeImages', optimizeImages);
 
-gulp.task('default', ['compileTemplates', 'copyStaticAssets', 'compileStyles', 'copyImages']);
-gulp.task('watchAll', ['default', 'watchTemplates', 'watchStyles']);
+gulp.task('default', ['compileTemplates', 'copyStaticAssets', 'compileStyles', 'optimizeImages']);
+gulp.task('watchAll', ['compileTemplates', 'copyStaticAssets', 'compileStyles', 'watchTemplates', 'watchStyles']);
