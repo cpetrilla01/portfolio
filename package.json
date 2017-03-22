@@ -12,15 +12,15 @@
     "gulp-clean-css": "2.0.10",
     "gulp-concat": "2.6.0",
     "gulp-htmlclean": "2.7.6",
+    "gulp-image": "2.7.5",
     "gulp-less": "3.1.0",
     "gulp-preprocess": "2.0.0",
     "gulp-template": "4.0.0",
     "gulp-util": "3.0.7"
   },
   "devDependencies": {
-    "gulp-watch": "^4.3.5",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-imagemin": "^3.0.1"
+    "gulp-watch": "4.3.5",
+    "gulp-sourcemaps": "1.6.0"
   },
   "scripts": {
     "start": "node server.js",
