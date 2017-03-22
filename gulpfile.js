@@ -8,7 +8,6 @@ var htmlclean = require('gulp-htmlclean');
 var template = require('gulp-template');
 var preprocess = require ('gulp-preprocess');
 var gutil = require('gulp-util');
-var image = require('gulp-image');
 
 var now = Date.now();
 var prod = process.env.npm_config_production;
@@ -78,7 +77,6 @@ gulp.task('compileStyles', compileStyles);
 gulp.task('watchTemplates', watchTemplates);
 gulp.task('watchStyles', watchStyles);
 gulp.task('copyImages', copyImages);
-
 
 gulp.task('default', ['compileTemplates', 'copyStaticAssets', 'compileStyles', 'copyImages']);
 gulp.task('watchAll', ['compileTemplates', 'copyStaticAssets', 'compileStyles', 'watchTemplates', 'watchStyles']);
