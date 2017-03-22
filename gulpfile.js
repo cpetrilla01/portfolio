@@ -78,6 +78,5 @@ gulp.task('watchTemplates', watchTemplates);
 gulp.task('watchStyles', watchStyles);
 gulp.task('copyImages', copyImages);
 
-
 gulp.task('default', ['compileTemplates', 'copyStaticAssets', 'compileStyles', 'copyImages']);
 gulp.task('watchAll', ['compileTemplates', 'copyStaticAssets', 'compileStyles', 'watchTemplates', 'watchStyles']);
