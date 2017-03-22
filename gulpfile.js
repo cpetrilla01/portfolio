@@ -59,9 +59,8 @@ var compileStyles = function() {
 		.pipe(gulp.dest(config.styles.destination));
 };
 
-var optimizeImages = function() {
+var copyImages = function() {
 	return gulp.src(config.images.source)
-		.pipe(image())
 		.pipe(gulp.dest(config.images.destination));
 };
 
@@ -78,7 +77,7 @@ gulp.task('copyStaticAssets', copyStaticAssets);
 gulp.task('compileStyles', compileStyles);
 gulp.task('watchTemplates', watchTemplates);
 gulp.task('watchStyles', watchStyles);
-gulp.task('optimizeImages', optimizeImages);
+gulp.task('copyImages', copyImages);
 
-gulp.task('default', ['compileTemplates', 'copyStaticAssets', 'compileStyles', 'optimizeImages']);
+gulp.task('default', ['compileTemplates', 'copyStaticAssets', 'compileStyles', 'copyImages']);
 gulp.task('watchAll', ['compileTemplates', 'copyStaticAssets', 'compileStyles', 'watchTemplates', 'watchStyles']);
