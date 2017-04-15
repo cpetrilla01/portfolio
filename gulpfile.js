@@ -10,7 +10,7 @@ var preprocess = require ('gulp-preprocess');
 var gutil = require('gulp-util');
 
 var now = Date.now();
-var prod = process.env.npm_config_production;
+var prod = process.env.NODE_ENV === 'prod';
 var config = {
 	templates: {
 		source: './app/templates/**/*.hbs',
