@@ -58,15 +58,6 @@ var SampleApp = function() {
 		self.app.engine('.hbs', hbs.engine);
 		self.app.set('view engine', '.hbs');
 
-		self.app.get('/about', function (req, res) {
-			res.render('about', {
-				pageTitle: 'About—Christopher Petrilla, Front-end engineer',
-				metaDescription: 'Learn about Christopher Petrilla including some professional and personal insights.',
-				copyrightYear: new Date().getFullYear(),
-				layout: 'main'
-			});
-		});
-
 		self.app.get('/', function (req, res) {
 			res.render('index', {
 				pageTitle: 'Christopher Petrilla, Front-end engineer',
