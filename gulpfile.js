@@ -1,9 +1,7 @@
 const gulp = require('gulp');
 const less = require('gulp-less');
-const sourcemaps = require('gulp-sourcemaps');
 const concat = require('gulp-concat');
 const cleanCSS = require('gulp-clean-css');
-const watch = require('gulp-watch');
 const htmlclean = require('gulp-htmlclean');
 const template = require('gulp-template');
 const preprocess = require ('gulp-preprocess');
@@ -11,6 +9,13 @@ const gutil = require('gulp-util');
 
 const now = Date.now();
 const prod = process.env.NODE_ENV === 'production';
+
+if (!prod) {
+	const imagemin = require('gulp-imagemin');
+	const sourcemaps = require('gulp-sourcemaps');
+	const watch = require('gulp-watch');
+}
+
 const config = {
 	templates: {
 		source: './app/templates/**/*.hbs',
@@ -64,7 +69,6 @@ const copyImages = function() {
 };
 
 const optimizeImages = function() {
-	const imagemin = require('gulp-imagemin');
 	return gulp.src(config.images.source)
 		.pipe(imagemin());
 };
@@ -84,6 +88,8 @@ gulp.task('watchTemplates', watchTemplates);
 gulp.task('watchStyles', watchStyles);
 gulp.task('copyImages', copyImages);
 gulp.task('optimizeImages', optimizeImages);
+
+gulp.task('pre-commit', ['optimizeImages']);
 
 gulp.task('default', ['compileTemplates', 'copyStaticAssets', 'compileStyles', 'copyImages']);
 gulp.task('watchAll', ['compileTemplates', 'copyStaticAssets', 'compileStyles', 'watchTemplates', 'watchStyles']);
