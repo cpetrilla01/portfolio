@@ -6,4 +6,4 @@
 # Developing new features
 
 1. Run `node server.js`. Optional: Specify the port for the local server with environment variable `OPENSHIFT_NODEJS_PORT` (e.g., 80).
-2.  Run `gulp watchAll`.
+2. Run `gulp watchAll`.
