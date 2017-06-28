@@ -1,17 +1,17 @@
-var gulp = require('gulp');
-var less = require('gulp-less');
-var sourcemaps = require('gulp-sourcemaps');
-var concat = require('gulp-concat');
-var cleanCSS = require('gulp-clean-css');
-var watch = require('gulp-watch');
-var htmlclean = require('gulp-htmlclean');
-var template = require('gulp-template');
-var preprocess = require ('gulp-preprocess');
-var gutil = require('gulp-util');
+const gulp = require('gulp');
+const less = require('gulp-less');
+const sourcemaps = require('gulp-sourcemaps');
+const concat = require('gulp-concat');
+const cleanCSS = require('gulp-clean-css');
+const watch = require('gulp-watch');
+const htmlclean = require('gulp-htmlclean');
+const template = require('gulp-template');
+const preprocess = require ('gulp-preprocess');
+const gutil = require('gulp-util');
 
-var now = Date.now();
-var prod = process.env.NODE_ENV === 'prod';
-var config = {
+const now = Date.now();
+const prod = process.env.NODE_ENV === 'prod';
+const config = {
 	templates: {
 		source: './app/templates/**/*.hbs',
 		destination: './dist/templates'
@@ -33,8 +33,8 @@ var config = {
 	}
 };
 
-var compileTemplates = function() {
-	var cssPath = config.styles.relativeUrl + config.styles.filename;
+const compileTemplates = function() {
+	const cssPath = config.styles.relativeUrl + config.styles.filename;
 
 	return gulp.src(config.templates.source)
 		.pipe(prod ? preprocess({context: {prod: true}}) : preprocess({context: {dev: true}}))
@@ -43,12 +43,12 @@ var compileTemplates = function() {
 		.pipe(gulp.dest(config.templates.destination));
 };
 
-var copyStaticAssets = function() {
+const copyStaticAssets = function() {
 	return gulp.src(config.static.source)
 		.pipe(gulp.dest(config.static.destination));
 };
 
-var compileStyles = function() {
+const compileStyles = function() {
 	return gulp.src(config.styles.source)
 		.pipe(prod ? gutil.noop() : sourcemaps.init())
 		.pipe(less())
@@ -58,16 +58,22 @@ var compileStyles = function() {
 		.pipe(gulp.dest(config.styles.destination));
 };
 
-var copyImages = function() {
+const copyImages = function() {
 	return gulp.src(config.images.source)
 		.pipe(gulp.dest(config.images.destination));
 };
 
-var watchTemplates = function() {
+const optimizeImages = function() {
+	const imagemin = require('gulp-imagemin');
+	return gulp.src(config.images.source)
+		.pipe(imagemin());
+};
+
+const watchTemplates = function() {
 	gulp.watch(config.templates.source, ['compileTemplates']);
 };
 
-var watchStyles = function() {
+const watchStyles = function() {
 	gulp.watch(config.styles.source, ['compileStyles']);
 };
 
@@ -77,6 +83,7 @@ gulp.task('compileStyles', compileStyles);
 gulp.task('watchTemplates', watchTemplates);
 gulp.task('watchStyles', watchStyles);
 gulp.task('copyImages', copyImages);
+gulp.task('optimizeImages', optimizeImages);
 
 gulp.task('default', ['compileTemplates', 'copyStaticAssets', 'compileStyles', 'copyImages']);
 gulp.task('watchAll', ['compileTemplates', 'copyStaticAssets', 'compileStyles', 'watchTemplates', 'watchStyles']);
