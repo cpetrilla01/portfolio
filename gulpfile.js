@@ -69,7 +69,6 @@ const copyImages = function() {
 };
 
 const optimizeImages = function() {
-	console.log('optimized images');
 	return gulp.src(config.images.source)
 		.pipe(imagemin());
 };
@@ -90,7 +89,9 @@ gulp.task('watchStyles', watchStyles);
 gulp.task('copyImages', copyImages);
 gulp.task('optimizeImages', optimizeImages);
 
-gulp.task('pre-commit', ['optimizeImages']);
+gulp.task('pre-commit', function() {
+	console.log('pre-commit task fired');
+});
 
 gulp.task('default', ['compileTemplates', 'copyStaticAssets', 'compileStyles', 'copyImages']);
 gulp.task('watchAll', ['compileTemplates', 'copyStaticAssets', 'compileStyles', 'watchTemplates', 'watchStyles']);
