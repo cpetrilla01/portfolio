@@ -14,7 +14,6 @@ if (!prod) {
 	const imagemin = require('gulp-imagemin');
 	const sourcemaps = require('gulp-sourcemaps');
 	const watch = require('gulp-watch');
-	const guppy = require('git-guppy')(gulp);
 }
 
 const config = {
