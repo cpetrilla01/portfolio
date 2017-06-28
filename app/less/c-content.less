@@ -2,6 +2,16 @@
 
 .c-content__section {
 	padding-top: 4em;
+	& a {
+		border-bottom: 2px solid transparent;
+		color: @blue;
+		text-decoration: none;
+	}
+	& a:hover,
+	& a:focus {
+		border-bottom: 2px solid @blue;
+		outline: none;
+	}
 }
 
 .c-content__header {
