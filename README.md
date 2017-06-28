@@ -13,8 +13,6 @@ Follow the steps below to set up your local environment for this project.
 2. Run `gulp watchAll` to compile templates, JavaScript, and CSS on file changes. Restart the watcher if you add new files.
 3. If you add images, run `gulp optimizeImages` before committing. This optimizes images inline in the `app/img` directory.
 
----
-
 # Recreating the application on OpenShift
 
 Create the application with the following command:  
