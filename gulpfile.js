@@ -70,6 +70,7 @@ const copyImages = function() {
 };
 
 const optimizeImages = function() {
+	console.log('optimized images');
 	return gulp.src(config.images.source)
 		.pipe(imagemin());
 };
