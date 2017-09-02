@@ -9,10 +9,10 @@ const htmlclean = require('gulp-htmlclean');
 const template = require('gulp-template');
 const preprocess = require ('gulp-preprocess');
 const gutil = require('gulp-util');
+const imagemin = require('gulp-imagemin');
 
-const imagemin = prod ? gutil.noop() : require('gulp-imagemin');
+// This is used only in the dev environment, per the package.json file. Set to noop when in production, so the require statements don't break in production.
 const sourcemaps = prod ? gutil.noop() : require('gulp-sourcemaps');
-const watch = prod ? gutil.noop() : require('gulp-watch');
 
 const config = {
 	templates: {
@@ -37,11 +37,9 @@ const config = {
 };
 
 const compileTemplates = function() {
-	const cssPath = config.styles.relativeUrl + config.styles.filename;
-
 	return gulp.src(config.templates.source)
 		.pipe(prod ? preprocess({context: {prod: true}}) : preprocess({context: {dev: true}}))
-		.pipe(template({cssPath: cssPath}))
+		.pipe(template({cssPath: config.styles.relativeUrl + config.styles.filename}))
 		.pipe(htmlclean())
 		.pipe(gulp.dest(config.templates.destination));
 };
@@ -61,14 +59,10 @@ const compileStyles = function() {
 		.pipe(gulp.dest(config.styles.destination));
 };
 
-const copyImages = function() {
-	return gulp.src(config.images.source)
-		.pipe(gulp.dest(config.images.destination));
-};
-
 const optimizeImages = function() {
 	return gulp.src(config.images.source)
-		.pipe(imagemin());
+		.pipe(imagemin())
+		.pipe(gulp.dest(config.images.destination));
 };
 
 const watchTemplates = function() {
@@ -84,8 +78,7 @@ gulp.task('copyStaticAssets', copyStaticAssets);
 gulp.task('compileStyles', compileStyles);
 gulp.task('watchTemplates', watchTemplates);
 gulp.task('watchStyles', watchStyles);
-gulp.task('copyImages', copyImages);
 gulp.task('optimizeImages', optimizeImages);
 
-gulp.task('default', ['compileTemplates', 'copyStaticAssets', 'compileStyles', 'copyImages']);
-gulp.task('watchAll', ['compileTemplates', 'copyStaticAssets', 'compileStyles', 'watchTemplates', 'watchStyles']);
+gulp.task('default', ['compileTemplates', 'copyStaticAssets', 'compileStyles', 'optimizeImages']);
+gulp.task('watchAll', ['default', 'watchTemplates', 'watchStyles']);
