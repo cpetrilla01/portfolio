@@ -14,7 +14,7 @@ if (process.env.NODE_ENV === 'production') {
 	app.all(/.*/, function(req, res, next) {
 		let host = req.header('host');
 
-		if (host.match(/^www\..*/i || req.get('x-forwarded-proto') !== 'https')) {
+		if (host.match(/^www\..*/i || req.get('x-forwarded-proto') === 'https')) {
 			next();
 		} else {
 			res.redirect(301, `https://www.${host}${req.url}`);
