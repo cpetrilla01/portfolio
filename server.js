@@ -13,10 +13,16 @@ let hbs = exphbs.create({
 if (process.env.NODE_ENV === 'production') {
 	app.all(/.*/, function(req, res, next) {
 		let host = req.header('host');
+		let protocol = req.header('protocol');
 
-		if (host.match(/^www\..*/i && req.get('x-forwarded-proto') === 'https')) {
+		let isHttps = protocol === 'https';
+		let isWww = host.match(/^www\..*/i);
+
+		if (isHttps && isWww) {
 			next();
-		} else {
+		} else if (!isHttps && isWww) {
+			res.redirect(301, `https://${host}${req.url}`);
+		} else if (!isWww) {
 			res.redirect(301, `https://www.${host}${req.url}`);
 		}
 	});
