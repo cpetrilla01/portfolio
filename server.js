@@ -13,7 +13,7 @@ let hbs = exphbs.create({
 if (process.env.NODE_ENV === 'production') {
 	app.all(/.*/, function(req, res, next) {
 		let host = req.header('host');
-		let protocol = req.header('protocol');
+		let protocol = req.get('x-forwarded-proto');
 
 		let isHttps = protocol === 'https';
 		let isWww = host.match(/^www\..*/i);
