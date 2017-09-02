@@ -2,13 +2,25 @@ const path = require('path');
 const express = require('express');
 const exphbs  = require('express-handlebars');
 
-var app = express();
-var hbs = exphbs.create({
+let app = express();
+let hbs = exphbs.create({
 	extname: '.hbs',
 	defaultLayout: 'main',
 	layoutsDir: path.join(__dirname, 'dist', 'templates', 'layouts'),
 	partialsDir: path.join(__dirname, 'dist', 'templates', 'partials')
 });
+
+if (process.env.NODE_ENV === 'production') {
+	app.all(/.*/, function(req, res, next) {
+		let host = req.header('host');
+
+		if (host.match(/^www\..*/i || req.get('x-forwarded-proto') !== 'https')) {
+			next();
+		} else {
+			res.redirect(301, `https://www.${host}${req.url}`);
+		}
+	});
+}
 
 app.set('port', (process.env.PORT || 80));
 app.use(express.compress());
