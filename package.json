@@ -6,20 +6,23 @@
     "url": "https://github.com/cmpetrilla/portfolio"
   },
   "dependencies": {
-    "express": "3.4.8",
+    "express": "^3.21.2",
     "express-handlebars": "3.0.0",
     "gulp": "3.9.1",
     "gulp-clean-css": "2.0.10",
     "gulp-concat": "2.6.0",
     "gulp-htmlclean": "2.7.6",
+    "gulp-imagemin": "3.3.0",
     "gulp-less": "3.1.0",
     "gulp-preprocess": "2.0.0",
     "gulp-template": "4.0.0",
-    "gulp-util": "3.0.7",
-    "gulp-imagemin": "3.3.0"
+    "gulp-util": "3.0.7"
   },
   "devDependencies": {
     "gulp-sourcemaps": "1.6.0"
+  },
+  "engines": {
+    "node": "10.15.1"
   },
   "scripts": {
     "start": "node server.js",
