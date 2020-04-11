@@ -38,7 +38,7 @@ app.set('view engine', '.hbs');
 app.get('/', function (req, res) {
 	res.render('index', {
 		pageTitle: 'Christopher Petrilla, Front-end engineer',
-		metaDescription: 'Portfolio for Christopher Petrilla, a NYC-based front-end engineer. Expertise with Node, Express, Angular, and performance.',
+		metaDescription: 'Portfolio for Christopher Petrilla, a Philadelphia-based front-end engineer. Expertise with Node, Express, React, and performance.',
 		copyrightYear: new Date().getFullYear()
 	});
 });
