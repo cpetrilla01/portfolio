@@ -2,6 +2,7 @@ const path = require('path');
 const express = require('express');
 const exphbs  = require('express-handlebars');
 const sslRedirect = require('heroku-ssl-redirect');
+const compression = require('compression');
 
 const app = express();
 
@@ -13,9 +14,9 @@ const hbs = exphbs.create({
 });
 
 app.use(sslRedirect());
+app.use(compression());
 
 app.set('port', (process.env.PORT || 80));
-app.use(express.compress());
 
 app.set('views', path.join(__dirname, 'dist', 'templates', 'views'));
 app.engine('.hbs', hbs.engine);
