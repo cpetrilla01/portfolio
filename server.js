@@ -1,32 +1,18 @@
 const path = require('path');
 const express = require('express');
 const exphbs  = require('express-handlebars');
+const sslRedirect = require('heroku-ssl-redirect');
 
-let app = express();
-let hbs = exphbs.create({
+const app = express();
+
+const hbs = exphbs.create({
 	extname: '.hbs',
 	defaultLayout: 'main',
 	layoutsDir: path.join(__dirname, 'dist', 'templates', 'layouts'),
 	partialsDir: path.join(__dirname, 'dist', 'templates', 'partials')
 });
 
-if (process.env.NODE_ENV === 'production') {
-	app.all(/.*/, function(req, res, next) {
-		let host = req.header('host');
-		let protocol = req.get('x-forwarded-proto');
-
-		let isHttps = protocol === 'https';
-		let isWww = host.match(/^www\..*/i);
-
-		if (isHttps && isWww) {
-			next();
-		} else if (!isHttps && isWww) {
-			res.redirect(301, `https://${host}${req.url}`);
-		} else if (!isWww) {
-			res.redirect(301, `https://www.${host}${req.url}`);
-		}
-	});
-}
+app.use(sslRedirect());
 
 app.set('port', (process.env.PORT || 80));
 app.use(express.compress());
