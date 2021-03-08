@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
+
+* {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+a:focus {
+    outline: silver dotted 1px;
+}
+
+body {
+    color: #444444;
+    word-break: break-word;
+}
+
+img {
+    max-width: 100%;
+}

@@ -1,13 +1,12 @@
 # Setting up local environment
 
 1. Clone this repo.
-2. In the same directory, run `npm install`. This will also run the gulp tasks to generate the `dist` folder.
+2. Run `npm install`.
 
 ## Developing new features
 
-1. Run `node server.js` to start your server.
-2. Run `gulp watchAll` to compile templates, JavaScript, and CSS in the `dist` directory when files change. Restart the watcher if you add new files.
+Run `npm start` to start your server. This also starts the Webpack watcher.
 
 ## Deploying
 
-Heroku will automatically deploy new changes as they are pushed to the `master` branch of this repo.
+Commit the changes to the `master` branch. The Webpack build will run as part of a pre-commit hook, and that will build the `dist` folder locally. After pushing the changes, the GitHub will refresh the site via Pages.
