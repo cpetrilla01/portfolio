@@ -4,7 +4,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/cmpetrilla/portfolio"
+    "url": "https://github.com/cpetrilla01/portfolio"
   },
   "engines": {
     "node": "10.15.1"

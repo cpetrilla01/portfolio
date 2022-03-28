@@ -53,7 +53,7 @@ const AboutSection = () => {
           <p>Currently, I'm front-end engineer with Elsevier, a medical publishing company. I've been with Elsevier for seven years, and during that time, I've progressed from a junior- to senior-level role, contributing to each of the ClinicalKey applications: Physician, Nursing, Student, and most recently, CK Now.</p>
           <p>Before Elsevier, I worked with the University of Delaware as a Web developer. I focused on building interactive Web applications, but my role also included requirements gathering, QA, and some project management.</p>
           <p>I love development, but I like to round out my career with personal interests: watching movies, reading, learning photography, traveling, and experiencing Japanese food and language... and drinking whiskey 😄.</p>
-          <p>If you'd like to connect, find me on <a href='https://www.github.com/cmpetrilla' target='_blank'>GitHub</a> or <a href='https://www.linkedin.com/in/cpetrilla01/' target='_blank'>LinkedIn</a>.</p>
+          <p>If you'd like to connect, find me on <a href='https://www.github.com/cpetrilla01' target='_blank'>GitHub</a> or <a href='https://www.linkedin.com/in/cpetrilla01/' target='_blank'>LinkedIn</a>.</p>
         </div>
       </div>
     </section>
