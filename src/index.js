@@ -1,5 +1,5 @@
 import React from 'react';
-import {render} from 'react-dom';
+import {createRoot} from 'react-dom/client';
 import 'normalize.css';
 import './styles/global.css';
 import {ThemeProvider, createTheme} from '@mui/material';
@@ -37,4 +37,6 @@ function App() {
   );
 }
 
-render(<App/>, document.getElementById('root'));
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(<App />);
