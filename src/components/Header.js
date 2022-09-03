@@ -22,7 +22,7 @@ const navigationItemsData = [
  },
 ];
 
-function Header() {
+const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
@@ -109,4 +109,4 @@ function Header() {
   );
 }
 
-export {Header};
+export default Header;

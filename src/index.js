@@ -3,7 +3,7 @@ import {createRoot} from 'react-dom/client';
 import 'normalize.css';
 import './styles/global.css';
 import {ThemeProvider, createTheme} from '@mui/material';
-import {Header} from './components/Header';
+import Header from './components/Header';
 import HeroSection from './components/hero-section/HeroSection';
 import AboutSection from './components/about-section/AboutSection';
 import SkillsSection from './components/skills-section/SkillsSection';
