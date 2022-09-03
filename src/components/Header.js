@@ -22,7 +22,7 @@ const navigationItemsData = [
  },
 ];
 
-export default function ButtonAppBar() {
+function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
@@ -108,3 +108,5 @@ export default function ButtonAppBar() {
     </Box>
   );
 }
+
+export {Header};
