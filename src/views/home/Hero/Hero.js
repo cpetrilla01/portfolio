@@ -4,7 +4,7 @@ import {
 	Typography,
 } from '@mui/material';
 
-const HeroSection = () => (
+const Hero = () => (
 	<Box
 	  sx={{
 			alignItems: 'center',
@@ -26,4 +26,4 @@ const HeroSection = () => (
 	</Box>
 );
 
-export {HeroSection};
+export {Hero};

@@ -1,10 +1,10 @@
-import ReactIcon from '../../icons/react.svg';
-import NodeIcon from '../../icons/node-dot-js.svg';
-import JSIcon from '../../icons/javascript.svg';
-import HTML5Icon from '../../icons/html5.svg';
-import CSS3Icon from '../../icons/css3.svg';
-import AngularJSIcon from '../../icons/angularjs.svg';
-import GitHubIcon from '../../icons/github.svg';
+import ReactIcon from '../../../icons/react.svg';
+import NodeIcon from '../../../icons/node-dot-js.svg';
+import JSIcon from '../../../icons/javascript.svg';
+import HTML5Icon from '../../../icons/html5.svg';
+import CSS3Icon from '../../../icons/css3.svg';
+import AngularJSIcon from '../../../icons/angularjs.svg';
+import GitHubIcon from '../../../icons/github.svg';
 
 const skillsListData = [
   {

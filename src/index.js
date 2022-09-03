@@ -3,11 +3,8 @@ import {createRoot} from 'react-dom/client';
 import 'normalize.css';
 import './styles/global.css';
 import {ThemeProvider, createTheme} from '@mui/material';
-import {Header} from './components/Header';
-import {HeroSection} from './views/home';
-import AboutSection from './components/about-section/AboutSection';
-import SkillsSection from './components/skills-section/SkillsSection';
-import Footer from './components/footer/Footer';
+import {Header, Footer} from './components';
+import {Home} from './views/home';
 
 const theme = createTheme({
   palette: {
@@ -29,9 +26,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Header />
-      <HeroSection />
-      <SkillsSection />
-      <AboutSection />
+      <Home />
       <Footer />
     </ThemeProvider>
   );

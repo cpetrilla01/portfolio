@@ -1,6 +1,6 @@
 import React from 'react';
 import {createUseStyles} from 'react-jss';
-import {headingStyles, sectionStyles} from '../../styles/shared-styles';
+import {headingStyles, sectionStyles} from '../../../styles/shared-styles';
 import Skill from './Skill';
 import skillsListData from './skills-list-data';
 
@@ -26,7 +26,7 @@ const useStyles = createUseStyles({
   },
 });
 
-const SkillsSection = () => {
+const Skills = () => {
   const styles = useStyles();
 
   return (
@@ -41,4 +41,4 @@ const SkillsSection = () => {
   );
 };
 
-export default SkillsSection;
+export {Skills};

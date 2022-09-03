@@ -1,7 +1,7 @@
 import React from 'react';
 import {createUseStyles} from 'react-jss';
-import {headingStyles, sectionStyles} from '../../styles/shared-styles.js';
-import Me from '../../images/me.jpg';
+import {headingStyles, sectionStyles} from '../../../styles/shared-styles.js';
+import Me from '../../../images/me.jpg';
 
 const useStyles = createUseStyles({
   container: {
@@ -40,7 +40,7 @@ const useStyles = createUseStyles({
   },
 });
 
-const AboutSection = () => {
+const About = () => {
   const styles = useStyles();
 
   return (
@@ -60,4 +60,4 @@ const AboutSection = () => {
   );
 };
 
-export default AboutSection;
+export {About};

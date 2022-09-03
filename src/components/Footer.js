@@ -1,6 +1,6 @@
 import React from 'react';
 import {createUseStyles} from 'react-jss';
-import {sectionStyles} from '../../styles/shared-styles';
+import {sectionStyles} from '../styles/shared-styles';
 
 const useStyles = createUseStyles({
   container: {
@@ -25,4 +25,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export {Footer};
