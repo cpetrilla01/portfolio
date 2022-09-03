@@ -4,7 +4,7 @@ import 'normalize.css';
 import './styles/global.css';
 import {ThemeProvider, createTheme} from '@mui/material';
 import Header from './components/Header';
-import HeroSection from './components/hero-section/HeroSection';
+import {HeroSection} from './components/sections';
 import AboutSection from './components/about-section/AboutSection';
 import SkillsSection from './components/skills-section/SkillsSection';
 import Footer from './components/footer/Footer';
