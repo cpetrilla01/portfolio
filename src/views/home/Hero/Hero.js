@@ -18,8 +18,8 @@ const Hero = () => (
 		}}
 	>
 		<Typography
-			variant='h1'
 			component='p'
+			variant='h3'
 		>
 			I build enterprise-level Javascript apps
 		</Typography>
