@@ -21,6 +21,9 @@ const theme = createTheme({
     allVariants: {
       color: '#444444',
     },
+    body1: {
+      fontSize: '1.25rem',
+    },
     fontFamily: '"Source Sans 3", arial, sans-serif',
   }
 });
