@@ -5,6 +5,7 @@ import {
 
 const SectionContainer = (props) => (
 	<Container
+		id={props.id || ''}
 		maxWidth={false}
 		sx={{
 			minHeight: '100vh',
