@@ -12,8 +12,6 @@ const Skills = () => (
   <SectionContainer id='skills'>
     <Container>
       <Typography
-        sx={{pb: 4}}
-        textAlign='center'
         variant='h2'
       >
         Skills

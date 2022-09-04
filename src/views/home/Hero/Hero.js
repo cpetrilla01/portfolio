@@ -17,8 +17,7 @@ const Hero = () => (
 	>
 		<Typography
 			color='inherit'
-			component='p'
-			variant='h3'
+			variant='subtitle1'
 		>
 			I build enterprise-level Javascript apps
 		</Typography>

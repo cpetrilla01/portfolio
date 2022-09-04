@@ -1,8 +1,7 @@
 import React from 'react';
 import {createRoot} from 'react-dom/client';
-import 'normalize.css';
 import './styles/global.css';
-import {ThemeProvider, createTheme} from '@mui/material';
+import {ThemeProvider, createTheme, CssBaseline} from '@mui/material';
 import {Header, Footer} from './components';
 import {Home} from './views/home';
 
@@ -18,23 +17,34 @@ const theme = createTheme({
     },
   },
   typography: {
+    fontFamily: '"Source Sans 3", arial, sans-serif',
     allVariants: {
       color: '#444444',
     },
     body1: {
       fontSize: '1.25rem',
+      marginBottom: '1rem',
     },
-    fontFamily: '"Source Sans 3", arial, sans-serif',
+    h2: {
+      paddingBottom: '2rem',
+      textAlign: 'center',
+    },
+    subtitle1: {
+      fontSize: '3rem',
+    },
   }
 });
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Header />
-      <Home />
-      <Footer />
-    </ThemeProvider>
+    <>
+      <CssBaseline />
+      <ThemeProvider theme={theme}>
+        <Header />
+        <Home />
+        <Footer />
+      </ThemeProvider>
+    </>
   );
 }
 

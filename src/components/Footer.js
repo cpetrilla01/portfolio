@@ -7,19 +7,15 @@ import {
 
 const Footer = () => (
   <Box
+    bgcolor='secondary.main'
+    color='white'
     component='footer'
-    sx={{
-      backgroundColor: 'secondary.main',
-      color: 'white',
-      p: 3,
-    }}
+    p={3}
   >
     <Typography
+      color='inherit'
+      textAlign='center'
       variant='body2'
-      sx={{
-        color: 'inherit',
-        textAlign: 'center'
-      }}
     >
       &copy;2021 Christopher Petrilla. Hosted by <Link sx={{color: 'inherit'}} href='https://pages.github.com/' target='_blank'>GitHub Pages</Link>. Most icons provided by <Link sx={{color: 'inherit'}} href='https://icons8.com/' target='_blank'>icons8</Link>.
     </Typography>

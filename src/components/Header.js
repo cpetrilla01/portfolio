@@ -44,7 +44,6 @@ const Header = () => {
               edge='start'
               onClick={handleDrawerToggle}
               size='large'
-              sx={{mr: 2}}
             >
               <MenuIcon />
             </IconButton>
@@ -96,7 +95,8 @@ const Header = () => {
               href={navigationItem.id}
               key={navigationItem.label}
               onClick={() => setMobileOpen(false)}
-              sx={{p: 2, textAlign: 'center'}}
+              p={2}
+              textAlign='center'
               underline='none'
               variant='h3'
             >
