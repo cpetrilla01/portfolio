@@ -14,12 +14,3 @@ html {
 a:focus {
     outline: silver dotted 1px;
 }
-
-body {
-    color: #444444;
-    word-break: break-word;
-}
-
-img {
-    max-width: 100%;
-}
