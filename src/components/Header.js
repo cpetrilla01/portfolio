@@ -79,16 +79,16 @@ const Header = () => {
         </Toolbar>
       </AppBar>
       <Box
-        component="nav"
+        component='nav'
       >
         <SwipeableDrawer
           ModalProps={{keepMounted: true}}
           open={mobileOpen}
           onClose={() => setMobileOpen(false)}
           onOpen={() => setMobileOpen(true)}
-          PaperProps={{sx: {py: 4, width: "80%"}}}
+          PaperProps={{sx: {py: 4, width: '80%'}}}
           sx={{display: {xs: 'block', sm: 'none'}}}
-          variant="temporary"
+          variant='temporary'
         >
           {navigationItemsData.map((navigationItem) => (
             <Link
