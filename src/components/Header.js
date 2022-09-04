@@ -50,6 +50,7 @@ const Header = () => {
             </IconButton>
           </Box>
           <Typography
+            color='inherit'
             component='h1'
             sx={{flexGrow: 1, textTransform: 'uppercase'}}
             variant='h6'

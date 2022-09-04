@@ -16,6 +16,7 @@ const Hero = () => (
 		}}
 	>
 		<Typography
+			color='inherit'
 			component='p'
 			variant='h3'
 		>

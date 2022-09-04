@@ -18,7 +18,10 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: '"Source Sans 3", arial, sans-serif'
+    allVariants: {
+      color: '#444444',
+    },
+    fontFamily: '"Source Sans 3", arial, sans-serif',
   }
 });
 
