@@ -8,7 +8,7 @@ const SectionContainer = (props) => (
 		maxWidth={false}
 		sx={{
 			minHeight: '100vh',
-			py: 6,
+			py: 8,
 			px: 3,
 			...props.sx,
 		}}
