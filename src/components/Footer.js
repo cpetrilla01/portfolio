@@ -1,28 +1,29 @@
 import React from 'react';
-import {createUseStyles} from 'react-jss';
-import {sectionStyles} from '../styles/shared-styles';
+import {
+  Box,
+  Link,
+  Typography,
+} from '@mui/material';
 
-const useStyles = createUseStyles({
-  container: {
-    ...sectionStyles,
-    minHeight: 0,
-    backgroundColor: '#033558',
-    color: 'white',
-    textAlign: 'center',
-    '& a': {
-      color: 'inherit',
-    }
-  },
-});
-
-const Footer = () => {
-  const styles = useStyles();
-
-  return (
-    <footer className={styles.container}>
-      <p>&copy;2021 Christopher Petrilla. Hosted by <a href='https://pages.github.com/' target='_blank'>GitHub Pages</a>. Most icons provided by <a href='https://icons8.com/' target='_blank'>icons8</a>.</p>
-    </footer>
-  );
-};
+const Footer = () => (
+  <Box
+    component='footer'
+    sx={{
+      backgroundColor: 'secondary.main',
+      color: 'white',
+      p: 3,
+    }}
+  >
+    <Typography
+      variant='body2'
+      sx={{
+        color: 'inherit',
+        textAlign: 'center'
+      }}
+    >
+      &copy;2021 Christopher Petrilla. Hosted by <Link sx={{color: 'inherit'}} href='https://pages.github.com/' target='_blank'>GitHub Pages</Link>. Most icons provided by <Link sx={{color: 'inherit'}} href='https://icons8.com/' target='_blank'>icons8</Link>.
+    </Typography>
+  </Box>
+);
 
 export {Footer};
