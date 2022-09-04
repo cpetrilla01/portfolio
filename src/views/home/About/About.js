@@ -3,6 +3,7 @@ import {
   Avatar,
   Container,
   Grid,
+  Link,
   Typography,
 } from '@mui/material';
 import {SectionContainer} from '../SectionContainer';
@@ -72,7 +73,7 @@ const About = () => (
             mb={2}
             variant='body1'
           >
-            If you'd like to connect, find me on <a href='https://www.github.com/cpetrilla01' target='_blank'>GitHub</a> or <a href='https://www.linkedin.com/in/cpetrilla01/' target='_blank'>LinkedIn</a>.
+            If you'd like to connect, find me on <Link href='https://www.github.com/cpetrilla01' target='_blank'>GitHub</Link> or <Link href='https://www.linkedin.com/in/cpetrilla01/' target='_blank'>LinkedIn</Link>.
           </Typography>
         </Grid>
       </Grid>
