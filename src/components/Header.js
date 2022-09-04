@@ -30,11 +30,10 @@ const Header = () => {
   };
 
   return (
-    <Box
-      sx={{display: 'flex'}}
-    >
+    <>
       <AppBar
-        component="nav"
+        component='nav'
+        position='sticky'
       >
         <Toolbar>
           <Box
@@ -105,7 +104,7 @@ const Header = () => {
           ))}
         </SwipeableDrawer>
       </Box>
-    </Box>
+    </>
   );
 }
 
