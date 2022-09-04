@@ -45,7 +45,7 @@ const Skills = () => (
                 {title}
               </Typography>
               <Typography
-                component='p'
+                variant='body2'
               >
                 {description}
               </Typography>

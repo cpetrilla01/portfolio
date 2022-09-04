@@ -25,6 +25,9 @@ const theme = createTheme({
       fontSize: '1.25rem',
       marginBottom: '1rem',
     },
+    body2: {
+      fontSize: '1rem',
+    },
     h2: {
       paddingBottom: '2rem',
       textAlign: 'center',
