@@ -1,44 +1,62 @@
 import React from 'react';
-import {createUseStyles} from 'react-jss';
-import {headingStyles, sectionStyles} from '../../../styles/shared-styles';
-import Skill from './Skill';
+import {SectionContainer} from '../SectionContainer';
 import skillsListData from './skills-list-data';
+import {
+  Card,
+  Container,
+  Grid,
+  Typography
+} from '@mui/material';
 
-const useStyles = createUseStyles({
-  container: {
-    ...sectionStyles,
-  },
-  heading: {
-    ...headingStyles,
-  },
-  grid: {
-    display: 'grid',
-    gridTemplateColumns: '1fr',
-    gap: '2rem',
-    margin: 'auto',
-    maxWidth: '80rem',
-    '@media only screen and (min-width: 780px)': {
-      gridTemplateColumns: '1fr 1fr',
-    },
-    '@media only screen and (min-width: 1340px)': {
-      gridTemplateColumns: '1fr 1fr 1fr',
-    },
-  },
-});
-
-const Skills = () => {
-  const styles = useStyles();
-
-  return (
-    <section className={styles.container} id='skills'>
-      <h2 className={styles.heading}>Skills</h2>
-      <div className={styles.grid}>
+const Skills = () => (
+  <SectionContainer id='skills'>
+    <Container>
+      <Typography
+        sx={{pb: 4}}
+        textAlign='center'
+        variant='h2'
+      >
+        Skills
+      </Typography>
+      <Grid
+        container
+        spacing={4}
+      >
         {skillsListData.map(({id, title, description}, index) =>
-          <Skill description={description} id={id} title={title} key={index} />
+          <Grid
+            item
+            key={index}
+            lg={3}
+            md={4}
+            sm={6}
+            xs={12}
+          >
+            <Card
+              elevation={3}
+              sx={{
+                height: '100%',
+                p: 2,
+              }}
+            >
+              {id}
+              <Typography
+                component='h3'
+                variant='h5'
+                sx={{py: 1}}
+              >
+                {title}
+              </Typography>
+              <Typography
+                component='p'
+              >
+                {description}
+              </Typography>
+            </Card>
+          </Grid>
         )}
-      </div>
-    </section>
-  );
-};
+      </Grid>
+    </Container>
+  </SectionContainer>
+);
 
 export {Skills};

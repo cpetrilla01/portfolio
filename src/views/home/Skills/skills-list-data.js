@@ -1,44 +1,45 @@
-import ReactIcon from '../../../icons/react.svg';
-import NodeIcon from '../../../icons/node-dot-js.svg';
-import JSIcon from '../../../icons/javascript.svg';
-import HTML5Icon from '../../../icons/html5.svg';
-import CSS3Icon from '../../../icons/css3.svg';
-import AngularJSIcon from '../../../icons/angularjs.svg';
-import GitHubIcon from '../../../icons/github.svg';
+import React from 'react';
+import {
+  Code as CodeIcon,
+  Css as CssIcon,
+  GitHub as GitHubIcon,
+  Html as HtmlIcon,
+  Javascript as JavascriptIcon,
+} from '@mui/icons-material';
 
 const skillsListData = [
   {
-    id: ReactIcon.id,
+    id: <CodeIcon />,
     title: 'React',
     description: 'Simple to complex components. Hooks. State management. Higher-level component design for optimal reuse.',
   },
   {
-    id: NodeIcon.id,
+    id: <CodeIcon />,
     title: 'Node',
     description: 'Package managers: npm, yarn. Servers: Express, Hapi. Templating: Jade, Handlebars. Build: Webpack, Grunt, Gulp.',
   },
   {
-    id: JSIcon.id,
+    id: <JavascriptIcon />,
     title: 'JavaScript',
     description: 'Object-oriented programming, MVC architecture, DOM API, event management.',
   },
   {
-    id: HTML5Icon.id,
+    id: <HtmlIcon />,
     title: 'HTML5',
     description: 'Semantic, accessible markup.',
   },
   {
-    id: CSS3Icon.id,
+    id: <CssIcon />,
     title: 'CSS3',
     description: 'Selectors, specificity, responsive design. Build: SASS, LESS. Naming conventions: OOCSS, SMACSS, BEM.',
   },
   {
-    id: AngularJSIcon.id,
+    id: <CodeIcon />,
     title: 'AngularJS',
     description: 'Services, directives, controllers, templates, filters.',
   },
   {
-    id: GitHubIcon.id,
+    id: <GitHubIcon />,
     title: 'GitHub',
     description: 'Peer review via pull requests.',
   },
