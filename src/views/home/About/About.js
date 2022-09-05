@@ -52,7 +52,7 @@ const About = () => (
           <Typography
             variant='body1'
           >
-            Currently, I'm a consultant with A2C, working with a health company that facilitates clinical trials. My current focus is to establish a common paradigm across the various disparate applications that the company has acquired over the years. Going forward, I hope to learn more about micro services architecture (including micro front-ends) and help build a company-wide React-based component library.
+            Currently, I'm a consultant with A2C, working with a healthcare company that facilitates clinical trials. My current focus is to establish a common paradigm across the various disparate applications that the company has acquired over the years. Going forward, I hope to learn more about micro services architecture (including micro front-ends) and help build a company-wide React-based component library.
           </Typography>
           <Typography
             variant='body1'
