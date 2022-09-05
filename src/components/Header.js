@@ -50,9 +50,8 @@ const Header = () => {
           </Box>
           <Typography
             color='inherit'
-            component='h1'
-            sx={{flexGrow: 1, textTransform: 'uppercase'}}
-            variant='h6'
+            sx={{flexGrow: 1}}
+            variant='h1'
           >
             <Link
               color='inherit'
