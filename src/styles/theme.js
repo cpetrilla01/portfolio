@@ -4,18 +4,16 @@ let theme = createTheme({
 	palette: {
 		primary: {
 			main: '#0A72BA',
-			contrastText: '#fff',
 		},
 		secondary: {
 			main: '#033558',
-			contrastText: '#000',
 		},
+		text: {
+			primary: '#444444',
+		}
 	},
 	typography: {
 		fontFamily: '"Source Sans 3", arial, sans-serif',
-		allVariants: {
-			color: '#444444',
-		},
 		body1: {
 			fontSize: '1.25rem',
 			marginBottom: '1rem',
@@ -32,7 +30,7 @@ let theme = createTheme({
 theme = createTheme(theme, {
 	typography: {
 		sectionHeader: {
-			color: theme.typography.allVariants.color,
+			color: theme.palette.text.primary,
 			fontFamily: theme.typography.fontFamily,
 			fontSize: '3.75rem',
 			fontWeight: '400',
