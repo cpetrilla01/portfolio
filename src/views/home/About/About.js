@@ -13,7 +13,8 @@ const About = () => (
   <SectionContainer id='about'>
     <Container>
       <Typography
-        variant='h2'
+        component='h2'
+        variant='sectionHeader'
       >
         About
       </Typography>

@@ -12,7 +12,8 @@ const Skills = () => (
   <SectionContainer id='skills'>
     <Container>
       <Typography
-        variant='h2'
+        component='h2'
+        variant='sectionHeader'
       >
         Skills
       </Typography>
