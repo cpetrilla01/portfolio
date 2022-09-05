@@ -5,6 +5,8 @@ import {
   Typography,
 } from '@mui/material';
 
+const currentYear = new Date().getFullYear();
+
 const Footer = () => (
   <Box
     bgcolor='secondary.main'
@@ -17,7 +19,7 @@ const Footer = () => (
       textAlign='center'
       variant='body2'
     >
-      &copy;2022 Christopher Petrilla. Hosted by <Link sx={{color: 'inherit'}} href='https://pages.github.com/' target='_blank'>GitHub Pages</Link>.
+      &copy;{currentYear} Christopher Petrilla. Hosted by <Link sx={{color: 'inherit'}} href='https://pages.github.com/' target='_blank'>GitHub Pages</Link>.
     </Typography>
   </Box>
 );
