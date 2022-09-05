@@ -47,27 +47,27 @@ const About = () => (
           <Typography
             variant='body1'
           >
-            I'm a front-end engineer living in Philadelphia, PA. I have nine years of professional experience with front-end engineering and development, but my personal interest in the field began with my first GeoCities fan page in 1997.
+            I'm a front-end engineer living in Philadelphia, PA. I have over ten years of professional experience with front-end engineering, but my personal interest in the field began with my first GeoCities fan page in 1997.
           </Typography>
           <Typography
             variant='body1'
           >
-            Currently, I'm front-end engineer with Elsevier, a medical publishing company. I've been with Elsevier for seven years, and during that time, I've progressed from a junior- to senior-level role, contributing to each of the ClinicalKey applications: Physician, Nursing, Student, and most recently, CK Now.
+            Currently, I'm a consultant with A2C, working with a health company that facilitates clinical trials. My current focus is to establish a common paradigm across the various disparate applications that the company has acquired over the years. Going forward, I hope to learn more about micro services architecture (including micro front-ends) and help build a company-wide React-based component library.
           </Typography>
           <Typography
             variant='body1'
           >
-            Before Elsevier, I worked with the University of Delaware as a Web developer. I focused on building interactive Web applications, but my role also included requirements gathering, QA, and some project management.
+            Previously, I worked with Elsevier, a medical publishing company, for over eight years. During that time, I contributed to each of the ClinicalKey applications: Physician, Nursing, Student, and CK Now. Prior to Elsevier, I worked at the University of Delaware, contributing to their core web business systems.
           </Typography>
           <Typography
             variant='body1'
           >
-            I love development, but I like to round out my career with personal interests: watching movies, reading, learning photography, traveling, and experiencing Japanese food and language... and drinking whiskey 😄.
+            I love development, but I like to round out my career with personal interests: watching movies, reading, learning photography, traveling, exploring Japan when I'm able, and finding my next favorite coffee... and whiskey 😉.
           </Typography>
           <Typography
             variant='body1'
           >
-            If you'd like to connect, find me on <Link href='https://www.github.com/cpetrilla01' target='_blank'>GitHub</Link> or <Link href='https://www.linkedin.com/in/cpetrilla01/' target='_blank'>LinkedIn</Link>.
+            If you'd like to learn more about me or my experience, or if you'd like to connect, find me on <Link href='https://www.github.com/cpetrilla01' target='_blank'>GitHub</Link> or <Link href='https://www.linkedin.com/in/cpetrilla01/' target='_blank'>LinkedIn</Link>.
           </Typography>
         </Grid>
       </Grid>
