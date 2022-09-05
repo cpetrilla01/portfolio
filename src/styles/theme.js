@@ -21,10 +21,6 @@ const theme = {
 		body2: {
 			fontSize: '1rem',
 		},
-		h1: {
-			fontSize: '1.25rem',
-			textTransform: 'uppercase',
-		},
 		h2: {
 			paddingBottom: '2rem',
 			textAlign: 'center',
