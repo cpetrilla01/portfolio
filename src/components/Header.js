@@ -3,13 +3,19 @@ import {
   AppBar,
   Box,
   Button,
+  Fab,
+  Fade,
   IconButton,
   Link,
   SwipeableDrawer,
   Toolbar,
   Typography,
+  useScrollTrigger,
 } from '@mui/material';
-import {Menu as MenuIcon} from '@mui/icons-material';
+import {
+  KeyboardArrowUp as KeyboardArrowUpIcon,
+  Menu as MenuIcon,
+} from '@mui/icons-material';
 
 const navigationItemsData = [
   {
@@ -22,7 +28,43 @@ const navigationItemsData = [
  },
 ];
 
-const Header = () => {
+function ScrollTop(props) {
+  const { children } = props;
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 100,
+  });
+
+  const handleClick = (event) => {
+    const anchor = (event.target.ownerDocument || document).querySelector(
+      '#back-to-top-anchor',
+    );
+
+    if (anchor) {
+      anchor.scrollIntoView({
+        block: 'center',
+      });
+    }
+  };
+
+  return (
+    <Fade in={trigger}>
+      <Box
+        onClick={handleClick}
+        role='presentation'
+        sx={{
+          bottom: 16,
+          position: 'fixed',
+          right: 16,
+      }}
+      >
+        {children}
+      </Box>
+    </Fade>
+  );
+}
+
+const Header = (props) => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
@@ -31,6 +73,7 @@ const Header = () => {
 
   return (
     <>
+      <div  id='back-to-top-anchor' />
       <AppBar
         component='nav'
         position='sticky'
@@ -105,6 +148,14 @@ const Header = () => {
           ))}
         </SwipeableDrawer>
       </Box>
+      <ScrollTop {...props}>
+        <Fab
+          size='large'
+          aria-label="scroll back to top"
+        >
+          <KeyboardArrowUpIcon />
+        </Fab>
+      </ScrollTop>
     </>
   );
 }
