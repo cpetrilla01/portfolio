@@ -6,8 +6,8 @@ import {
   Link,
   Typography,
 } from '@mui/material';
-import {SectionContainer} from '../SectionContainer';
-import Me from '../../../images/me.jpg';
+import {SectionContainer} from '../common';
+import Me from '../../images/me.jpg';
 
 const About = () => (
   <SectionContainer id='about'>

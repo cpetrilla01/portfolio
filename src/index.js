@@ -3,8 +3,13 @@ import {createRoot} from 'react-dom/client';
 import './styles/global.css';
 import {theme} from './styles/theme';
 import {ThemeProvider, CssBaseline} from '@mui/material';
-import {Header, Footer} from './components';
-import {Home} from './views/home';
+import {
+  Header,
+  Hero,
+  Skills,
+  About,
+  Footer
+} from './components';
 
 function App() {
   return (
@@ -12,7 +17,9 @@ function App() {
       <CssBaseline />
       <ThemeProvider theme={theme}>
         <Header />
-        <Home />
+        <Hero />
+        <Skills />
+        <About />
         <Footer />
       </ThemeProvider>
     </>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {SectionContainer} from '../SectionContainer';
+import {SectionContainer} from '../common';
 import skillsListData from './skills-list-data';
 import {
   Card,

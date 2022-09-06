@@ -1,7 +1,6 @@
 import React from 'react';
-import {SectionContainer} from '../SectionContainer';
+import {SectionContainer} from '../common';
 import {
-	Box,
 	Typography,
 } from '@mui/material';
 
