@@ -3,16 +3,18 @@ import {
   AppBar,
   Box,
   Button,
+  Divider,
+  Drawer,
   Fab,
   Fade,
   IconButton,
   Link,
-  SwipeableDrawer,
   Toolbar,
   Typography,
   useScrollTrigger,
 } from '@mui/material';
 import {
+  KeyboardArrowLeft as KeyboardArrowLeftIcon,
   KeyboardArrowUp as KeyboardArrowUpIcon,
   Menu as MenuIcon,
 } from '@mui/icons-material';
@@ -65,10 +67,10 @@ function ScrollTop(props) {
 }
 
 const Header = (props) => {
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
+    setDrawerOpen(!drawerOpen);
   };
 
   return (
@@ -124,20 +126,31 @@ const Header = (props) => {
       <Box
         component='nav'
       >
-        <SwipeableDrawer
+        <Drawer
           ModalProps={{keepMounted: true}}
-          open={mobileOpen}
-          onClose={() => setMobileOpen(false)}
-          onOpen={() => setMobileOpen(true)}
-          PaperProps={{sx: {py: 4, width: '80%'}}}
+          open={drawerOpen}
+          onClose={() => setDrawerOpen(false)}
+          PaperProps={{sx: {width: '80%'}}}
           sx={{display: {xs: 'block', sm: 'none'}}}
           variant='temporary'
         >
+          <Toolbar>
+            <IconButton
+              aria-label='Close drawer'
+              color='inherit'
+              edge='start'
+              onClick={handleDrawerToggle}
+              size='large'
+            >
+              <KeyboardArrowLeftIcon />
+            </IconButton>
+          </Toolbar>
+          <Divider />
           {navigationItemsData.map((navigationItem) => (
             <Link
               href={navigationItem.id}
               key={navigationItem.label}
-              onClick={() => setMobileOpen(false)}
+              onClick={() => setDrawerOpen(false)}
               p={2}
               textAlign='center'
               underline='none'
@@ -146,7 +159,7 @@ const Header = (props) => {
               {navigationItem.label}
             </Link>
           ))}
-        </SwipeableDrawer>
+        </Drawer>
       </Box>
       <ScrollTop {...props}>
         <Fab
