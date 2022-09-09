@@ -34,9 +34,11 @@ const About = () => (
             src={Me}
             sx={{
               height: 'auto',
+              marginLeft: 'auto',
+              marginRight: 'auto',
               maxWidth: '500px',
               width: '100%',
-          }}
+            }}
           />
         </Grid>
         <Grid
