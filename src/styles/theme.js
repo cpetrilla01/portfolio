@@ -13,7 +13,9 @@ let theme = createTheme({
 		}
 	},
 	typography: {
-		fontFamily: '"Source Sans 3", arial, sans-serif',
+		allVariants: {
+			color: '#444444',
+		},
 		body1: {
 			fontSize: '1.25rem',
 			marginBottom: '1rem',
@@ -21,6 +23,7 @@ let theme = createTheme({
 		body2: {
 			fontSize: '1rem',
 		},
+		fontFamily: '"Source Sans 3", arial, sans-serif',
 		subtitle1: {
 			fontSize: '3rem',
 		},
@@ -35,7 +38,7 @@ theme = createTheme(theme, {
 			fontSize: '3.75rem',
 			fontWeight: '400',
 			lineHeight: '1.2',
-			paddingBottom: '2rem',
+			marginBottom: '2rem',
 			textAlign: 'center',
 		}
 	},
