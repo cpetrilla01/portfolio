@@ -58,6 +58,7 @@ function ScrollTop(props) {
           bottom: 16,
           position: 'fixed',
           right: 16,
+          zIndex: 1,
       }}
       >
         {children}
