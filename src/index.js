@@ -11,20 +11,18 @@ import {
   Footer
 } from './components';
 
-function App() {
-  return (
-    <>
-      <CssBaseline />
-      <ThemeProvider theme={theme}>
-        <Header />
-        <Hero />
-        <Skills />
-        <About />
-        <Footer />
-      </ThemeProvider>
-    </>
-  );
-}
+const App = () => (
+  <>
+    <CssBaseline />
+    <ThemeProvider theme={theme}>
+      <Header />
+      <Hero />
+      <Skills />
+      <About />
+      <Footer />
+    </ThemeProvider>
+  </>
+);
 
 const container = document.getElementById('root');
 const root = createRoot(container);
