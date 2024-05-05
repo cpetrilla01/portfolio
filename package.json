@@ -7,7 +7,7 @@
     "url": "https://github.com/cpetrilla01/portfolio"
   },
   "engines": {
-    "node": "16.13.1"
+    "node": "20.12.2"
   },
   "scripts": {
     "start": "webpack serve --open --config webpack.dev.js",
