@@ -49,12 +49,12 @@ const About = () => (
           <Typography
             variant='body1'
           >
-            I'm a front-end engineer living in Philadelphia, PA. I have over ten years of professional experience with front-end engineering, but my personal interest in the field began with my first GeoCities fan page in 1997.
+            I'm a full-stack engineer living in Philadelphia, PA. I have over twelve years of professional experience with an emphasis on front-end development. Over my career, I've evolved into a full-stack JavaScript developer.
           </Typography>
           <Typography
             variant='body1'
           >
-            Currently, I'm a consultant with A2C, working with a healthcare company that facilitates clinical trials. My current focus is to establish a common paradigm across the various disparate applications that the company has acquired over the years. Going forward, I hope to learn more about micro services architecture (including micro front-ends) and help build a company-wide React-based component library.
+            Currently, I'm a full-time employee with Signant Health, building software that facilitates clinical trials. At Signant Health, I helped develop front-end standards of excellence to align multiple products under a greenfield project. I also heavily contributed to a company-wide React component library, which is currently used across these apps.
           </Typography>
           <Typography
             variant='body1'
@@ -64,7 +64,7 @@ const About = () => (
           <Typography
             variant='body1'
           >
-            I love development, but I like to round out my career with personal interests: watching movies, reading, learning photography, traveling, exploring Japan when I'm able, and finding my next favorite coffee... and whiskey 😉.
+            I love development, but I like to round out my career with personal interests: watching movies, reading, learning photography, traveling, exploring Japan when I'm able, and finding my next favorite coffee and whiskey 😉.
           </Typography>
           <Typography
             variant='body1'
