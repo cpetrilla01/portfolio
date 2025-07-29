@@ -4,7 +4,7 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import tseslint from 'typescript-eslint';
 import { globalIgnores } from 'eslint/config';
-import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
+import eslintConfigPrettier from 'eslint-config-prettier/flat';
 
 export default tseslint.config([
   globalIgnores(['dist']),
@@ -21,5 +21,5 @@ export default tseslint.config([
       globals: globals.browser,
     },
   },
-  eslintPluginPrettierRecommended,
+  eslintConfigPrettier,
 ]);
