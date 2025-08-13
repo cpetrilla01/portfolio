@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   Css as CssIcon,
   Html as HtmlIcon,
@@ -9,7 +8,8 @@ const core = [
   {
     id: <JavascriptIcon />,
     title: 'JavaScript',
-    description: 'ES6, Functional programming, object-oriented programming, DOM API, event management.',
+    description:
+      'ES6, Functional programming, object-oriented programming, DOM API, event management.',
   },
   {
     id: <HtmlIcon />,
@@ -19,8 +19,9 @@ const core = [
   {
     id: <CssIcon />,
     title: 'CSS',
-    description: 'CSS3, selectors, specificity, variables, media queries and responsive design, BEM naming conventions.',
+    description:
+      'CSS3, selectors, specificity, variables, media queries and responsive design, BEM naming conventions.',
   },
 ];
 
-export {core};
+export { core };

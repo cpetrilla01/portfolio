@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   AppBar,
   Box,
@@ -19,28 +19,30 @@ import {
   Menu as MenuIcon,
 } from '@mui/icons-material';
 
-const navigationItemsData = [
+const navigationItemsData: { id: string; label: string }[] = [
   {
     id: '#skills',
     label: 'Skills',
- },
+  },
   {
     id: '#about',
     label: 'About',
- },
+  },
 ];
 
-function ScrollTop(props) {
+interface ScrollTopProps {
+  children: React.ReactElement;
+}
+
+function ScrollTop(props: ScrollTopProps) {
   const { children } = props;
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 100,
   });
 
-  const handleClick = (event) => {
-    const anchor = (event.target.ownerDocument || document).querySelector(
-      '#back-to-top-anchor',
-    );
+  const handleClick = () => {
+    const anchor = document.querySelector('#back-to-top-anchor');
 
     if (anchor) {
       anchor.scrollIntoView({
@@ -59,7 +61,7 @@ function ScrollTop(props) {
           position: 'fixed',
           right: 16,
           zIndex: 1,
-      }}
+        }}
       >
         {children}
       </Box>
@@ -67,7 +69,7 @@ function ScrollTop(props) {
   );
 }
 
-const Header = (props) => {
+const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const handleDrawerToggle = () => {
@@ -76,14 +78,10 @@ const Header = (props) => {
 
   return (
     <>
-      <div  id='back-to-top-anchor' />
-      <AppBar
-        component='nav'
-        position='sticky'
-      >
+      <div id='back-to-top-anchor' />
+      <AppBar component='nav' position='sticky'>
         <Toolbar>
-          <Box
-            sx={{display: {sm: 'none'}}}>
+          <Box sx={{ display: { sm: 'none' } }}>
             <IconButton
               aria-label='Open drawer'
               color='inherit'
@@ -97,20 +95,14 @@ const Header = (props) => {
           <Typography
             color='inherit'
             component='h1'
-            sx={{flexGrow: 1, textTransform: 'uppercase'}}
+            sx={{ flexGrow: 1, textTransform: 'uppercase' }}
             variant='h6'
           >
-            <Link
-              color='inherit'
-              href='/'
-              underline='none'
-            >
+            <Link color='inherit' href='/' underline='none'>
               Christopher Petrilla
             </Link>
           </Typography>
-          <Box
-            sx={{display: {xs: 'none', sm: 'block'}}}
-          >
+          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navigationItemsData.map((navigationItem) => (
               <Button
                 color='inherit'
@@ -124,15 +116,13 @@ const Header = (props) => {
           </Box>
         </Toolbar>
       </AppBar>
-      <Box
-        component='nav'
-      >
+      <Box component='nav'>
         <Drawer
-          ModalProps={{keepMounted: true}}
+          ModalProps={{ keepMounted: true }}
           open={drawerOpen}
           onClose={() => setDrawerOpen(false)}
-          PaperProps={{sx: {width: '80%'}}}
-          sx={{display: {xs: 'block', sm: 'none'}}}
+          PaperProps={{ sx: { width: '80%' } }}
+          sx={{ display: { xs: 'block', sm: 'none' } }}
           variant='temporary'
         >
           <Toolbar>
@@ -162,16 +152,13 @@ const Header = (props) => {
           ))}
         </Drawer>
       </Box>
-      <ScrollTop {...props}>
-        <Fab
-          size='large'
-          aria-label="scroll back to top"
-        >
+      <ScrollTop>
+        <Fab size='large' aria-label='scroll back to top'>
           <KeyboardArrowUpIcon />
         </Fab>
       </ScrollTop>
     </>
   );
-}
+};
 
-export {Header};
+export { Header };

@@ -1,7 +1,4 @@
-import React from 'react';
-import {
-  Code as CodeIcon,
-} from '@mui/icons-material';
+import { Code as CodeIcon } from '@mui/icons-material';
 
 const architecture = [
   {
@@ -26,4 +23,4 @@ const architecture = [
   },
 ];
 
-export {architecture};
+export { architecture };

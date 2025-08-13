@@ -1,13 +1,11 @@
-import React from 'react';
-import {
-  Code as CodeIcon,
-} from '@mui/icons-material';
+import { Code as CodeIcon } from '@mui/icons-material';
 
 const tools = [
   {
     id: <CodeIcon />,
     title: 'React',
-    description: 'Hooks, state management, higher-level components, React Router.',
+    description:
+      'Hooks, state management, higher-level components, React Router.',
   },
   {
     id: <CodeIcon />,
@@ -17,7 +15,8 @@ const tools = [
   {
     id: <CodeIcon />,
     title: 'npm',
-    description: 'Semantic versioning, publishing to and importing from private registries like Artifactory.',
+    description:
+      'Semantic versioning, publishing to and importing from private registries like Artifactory.',
   },
   {
     id: <CodeIcon />,
@@ -36,4 +35,4 @@ const tools = [
   },
 ];
 
-export {tools};
+export { tools };
