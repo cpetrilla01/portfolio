@@ -1,0 +1,16 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding: 56px;
+}
+
+@media only screen and (min-width: 425px) {
+    html {
+        scroll-padding: 48px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    html {
+        scroll-padding: 64px;
+    }
+}
