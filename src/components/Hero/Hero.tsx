@@ -1,7 +1,7 @@
 import { SectionContainer } from '../common/SectionContainer';
 import { Typography } from '@mui/material';
 
-const Hero = () => (
+export const Hero = () => (
   <SectionContainer
     sx={{
       alignItems: 'center',
@@ -16,5 +16,3 @@ const Hero = () => (
     </Typography>
   </SectionContainer>
 );
-
-export { Hero };

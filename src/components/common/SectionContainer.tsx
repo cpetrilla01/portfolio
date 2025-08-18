@@ -1,13 +1,13 @@
 import React from 'react';
 import { Container } from '@mui/material';
 
-interface SectionContainerProps {
+export interface SectionContainerProps {
   id?: string;
   sx?: object;
   children: React.ReactNode;
 }
 
-const SectionContainer = (props: SectionContainerProps) => (
+export const SectionContainer = (props: SectionContainerProps) => (
   <Container
     id={props.id || ''}
     maxWidth={false}
@@ -27,5 +27,3 @@ const SectionContainer = (props: SectionContainerProps) => (
     {props.children}
   </Container>
 );
-
-export { SectionContainer };

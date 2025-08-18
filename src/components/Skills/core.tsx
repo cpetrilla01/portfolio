@@ -4,7 +4,7 @@ import {
   Javascript as JavascriptIcon,
 } from '@mui/icons-material';
 
-const core = [
+export const core = [
   {
     id: <JavascriptIcon />,
     title: 'JavaScript',
@@ -23,5 +23,3 @@ const core = [
       'CSS3, selectors, specificity, variables, media queries and responsive design, BEM naming conventions.',
   },
 ];
-
-export { core };

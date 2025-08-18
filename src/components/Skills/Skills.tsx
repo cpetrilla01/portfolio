@@ -19,7 +19,7 @@ const skillsSections = [
   },
 ];
 
-const Skills = () => (
+export const Skills = () => (
   <SectionContainer id='skills'>
     <Container>
       <Typography component='h2' variant='sectionHeader'>
@@ -56,5 +56,3 @@ const Skills = () => (
     </Container>
   </SectionContainer>
 );
-
-export { Skills };

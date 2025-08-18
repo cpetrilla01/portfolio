@@ -1,6 +1,6 @@
 import { Code as CodeIcon } from '@mui/icons-material';
 
-const tools = [
+export const tools = [
   {
     id: <CodeIcon />,
     title: 'React',
@@ -34,5 +34,3 @@ const tools = [
     description: '',
   },
 ];
-
-export { tools };

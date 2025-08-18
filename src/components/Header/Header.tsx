@@ -69,7 +69,7 @@ function ScrollTop(props: ScrollTopProps) {
   );
 }
 
-const Header = () => {
+export const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const handleDrawerToggle = () => {
@@ -160,5 +160,3 @@ const Header = () => {
     </>
   );
 };
-
-export { Header };

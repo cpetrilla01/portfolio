@@ -2,7 +2,7 @@ import { Avatar, Container, Grid, Link, Typography } from '@mui/material';
 import { SectionContainer } from '../common/SectionContainer';
 import Me from '../../images/me.jpg';
 
-const About = () => (
+export const About = () => (
   <SectionContainer id='about'>
     <Container>
       <Typography component='h2' variant='sectionHeader'>
@@ -75,5 +75,3 @@ const About = () => (
     </Container>
   </SectionContainer>
 );
-
-export { About };

@@ -2,7 +2,7 @@ import { Box, Link, Typography } from '@mui/material';
 
 const currentYear = new Date().getFullYear();
 
-const Footer = () => (
+export const Footer = () => (
   <Box bgcolor='secondary.main' color='white' component='footer' p={3}>
     <Typography color='inherit' textAlign='center' variant='body2'>
       &copy;{currentYear} Christopher Petrilla. Hosted by{' '}
@@ -17,5 +17,3 @@ const Footer = () => (
     </Typography>
   </Box>
 );
-
-export { Footer };

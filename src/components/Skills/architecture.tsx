@@ -1,6 +1,6 @@
 import { Code as CodeIcon } from '@mui/icons-material';
 
-const architecture = [
+export const architecture = [
   {
     id: <CodeIcon />,
     title: 'Micro services',
@@ -22,5 +22,3 @@ const architecture = [
     description: '',
   },
 ];
-
-export { architecture };
