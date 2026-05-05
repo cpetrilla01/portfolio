@@ -11,7 +11,9 @@ export const About = () => (
       <Grid
         container
         direction='row-reverse'
-        justifyContent='center'
+        sx={{
+          justifyContent: 'center',
+        }}
         spacing={4}
       >
         <Grid size={{ md: 6, xs: 12 }}>

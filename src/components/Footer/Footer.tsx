@@ -3,8 +3,11 @@ import { Box, Link, Typography } from '@mui/material';
 const currentYear = new Date().getFullYear();
 
 export const Footer = () => (
-  <Box bgcolor='secondary.main' color='white' component='footer' p={3}>
-    <Typography color='inherit' textAlign='center' variant='body2'>
+  <Box
+    sx={{ backgroundColor: 'secondary.main', color: 'white', padding: 3 }}
+    component='footer'
+  >
+    <Typography sx={{ color: 'inherit', textAlign: 'center' }} variant='body2'>
       &copy;{currentYear} Christopher Petrilla. Hosted by{' '}
       <Link
         sx={{ color: 'inherit' }}

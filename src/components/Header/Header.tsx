@@ -93,22 +93,21 @@ export const Header = () => {
             </IconButton>
           </Box>
           <Typography
-            color='inherit'
             component='h1'
-            sx={{ flexGrow: 1, textTransform: 'uppercase' }}
+            sx={{ color: 'inherit', flexGrow: 1, textTransform: 'uppercase' }}
             variant='h6'
           >
-            <Link color='inherit' href='/' underline='none'>
+            <Link sx={{ color: 'inherit' }} href='/' underline='none'>
               Christopher Petrilla
             </Link>
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navigationItemsData.map((navigationItem) => (
               <Button
-                color='inherit'
                 href={navigationItem.id}
                 key={navigationItem.id}
                 size='large'
+                sx={{ color: 'inherit' }}
               >
                 {navigationItem.label}
               </Button>
@@ -121,8 +120,10 @@ export const Header = () => {
           ModalProps={{ keepMounted: true }}
           open={drawerOpen}
           onClose={() => setDrawerOpen(false)}
-          PaperProps={{ sx: { width: '80%' } }}
-          sx={{ display: { xs: 'block', sm: 'none' } }}
+          sx={{
+            display: { xs: 'block', sm: 'none' },
+            '& .MuiDrawer-paper': { width: '80%' },
+          }}
           variant='temporary'
         >
           <Toolbar>
@@ -142,9 +143,11 @@ export const Header = () => {
               href={navigationItem.id}
               key={navigationItem.label}
               onClick={() => setDrawerOpen(false)}
-              p={2}
-              textAlign='center'
-              underline='none'
+              sx={{
+                padding: 2,
+                textAlign: 'center',
+                underline: 'none',
+              }}
               variant='h3'
             >
               {navigationItem.label}

@@ -27,7 +27,7 @@ export const Skills = () => (
       </Typography>
       {skillsSections.map((section, index) => (
         <div key={index}>
-          <Typography variant='h3' my={4}>
+          <Typography variant='h3' sx={{ my: 4 }}>
             {section.label}
           </Typography>
           <Box>

@@ -11,7 +11,7 @@ export const Hero = () => (
       justifyContent: 'center',
     }}
   >
-    <Typography color='inherit' variant='subtitle1'>
+    <Typography sx={{ color: 'inherit' }} variant='subtitle1'>
       I build enterprise-level Javascript apps
     </Typography>
   </SectionContainer>
