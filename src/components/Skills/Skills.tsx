@@ -5,7 +5,7 @@ import { architecture } from './architecture.tsx';
 import { Box, Card, Container, Grid, Typography } from '@mui/material';
 
 export interface Skill {
-  icon: React.ReactElement;
+  icon?: React.ReactElement;
   title: string;
   description: string;
 }
@@ -52,7 +52,7 @@ export const Skills = () => (
                       p: 2,
                     }}
                   >
-                    {icon}
+                    {icon && icon}
                     <Typography component='h3' variant='h5' sx={{ py: 1 }}>
                       {title}
                     </Typography>
