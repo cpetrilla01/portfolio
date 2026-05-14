@@ -3,29 +3,29 @@ import type { Skill } from './Skills.tsx';
 
 export const tools: Skill[] = [
   {
-    id: <CodeIcon />,
+    icon: <CodeIcon />,
     title: 'React',
     description:
       'Hooks, state management, higher-level components, React Router.',
   },
   {
-    id: <CodeIcon />,
+    icon: <CodeIcon />,
     title: 'Node',
     description: '',
   },
   {
-    id: <CodeIcon />,
+    icon: <CodeIcon />,
     title: 'npm',
     description:
       'Semantic versioning, publishing to and importing from private registries like Artifactory.',
   },
   {
-    id: <CodeIcon />,
+    icon: <CodeIcon />,
     title: 'Webpack',
     description: '',
   },
   {
-    id: <CodeIcon />,
+    icon: <CodeIcon />,
     title: 'Sass',
     description: '',
   },

@@ -3,22 +3,22 @@ import type { Skill } from './Skills.tsx';
 
 export const architecture: Skill[] = [
   {
-    id: <CodeIcon />,
+    icon: <CodeIcon />,
     title: 'Micro services',
     description: '',
   },
   {
-    id: <CodeIcon />,
+    icon: <CodeIcon />,
     title: 'Micro front-ends',
     description: '',
   },
   {
-    id: <CodeIcon />,
+    icon: <CodeIcon />,
     title: 'CI/CD',
     description: '',
   },
   {
-    id: <CodeIcon />,
+    icon: <CodeIcon />,
     title: 'Git branching',
     description: '',
   },

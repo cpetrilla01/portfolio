@@ -5,7 +5,7 @@ import { architecture } from './architecture.tsx';
 import { Box, Card, Container, Grid, Typography } from '@mui/material';
 
 export interface Skill {
-  id: React.ReactElement;
+  icon: React.ReactElement;
   title: string;
   description: string;
 }
@@ -43,7 +43,7 @@ export const Skills = () => (
           </Typography>
           <Box>
             <Grid container spacing={4}>
-              {section.contents.map(({ id, title, description }, index) => (
+              {section.contents.map(({ icon, title, description }, index) => (
                 <Grid key={index} size={{ lg: 3, md: 4, sm: 6, xs: 12 }}>
                   <Card
                     elevation={3}
@@ -52,7 +52,7 @@ export const Skills = () => (
                       p: 2,
                     }}
                   >
-                    {id}
+                    {icon}
                     <Typography component='h3' variant='h5' sx={{ py: 1 }}>
                       {title}
                     </Typography>
