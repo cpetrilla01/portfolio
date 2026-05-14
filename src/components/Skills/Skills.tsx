@@ -1,13 +1,24 @@
 import { SectionContainer } from '../common/SectionContainer';
-import { core } from './core.tsx';
+import { languages } from './languages.tsx';
 import { tools } from './tools.tsx';
 import { architecture } from './architecture.tsx';
 import { Box, Card, Container, Grid, Typography } from '@mui/material';
 
-const skillsSections = [
+export interface Skill {
+  id: React.ReactElement;
+  title: string;
+  description: string;
+}
+
+interface SkillSection {
+  label: string;
+  contents: Skill[];
+}
+
+const skillsSections: SkillSection[] = [
   {
-    label: 'Core technologies',
-    contents: [...core],
+    label: 'Languages',
+    contents: [...languages],
   },
   {
     label: 'Tools',

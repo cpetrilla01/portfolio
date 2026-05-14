@@ -1,6 +1,7 @@
 import { Code as CodeIcon } from '@mui/icons-material';
+import type { Skill } from './Skills.tsx';
 
-export const tools = [
+export const tools: Skill[] = [
   {
     id: <CodeIcon />,
     title: 'React',
@@ -17,11 +18,6 @@ export const tools = [
     title: 'npm',
     description:
       'Semantic versioning, publishing to and importing from private registries like Artifactory.',
-  },
-  {
-    id: <CodeIcon />,
-    title: 'Typescript',
-    description: 'Working knowledge (in progress).',
   },
   {
     id: <CodeIcon />,

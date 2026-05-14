@@ -1,6 +1,7 @@
 import { Code as CodeIcon } from '@mui/icons-material';
+import type { Skill } from './Skills.tsx';
 
-export const architecture = [
+export const architecture: Skill[] = [
   {
     id: <CodeIcon />,
     title: 'Micro services',
