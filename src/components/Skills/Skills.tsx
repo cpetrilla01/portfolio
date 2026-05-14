@@ -18,15 +18,15 @@ interface SkillSection {
 const skillsSections: SkillSection[] = [
   {
     label: 'Languages',
-    contents: [...languages],
+    contents: languages,
   },
   {
     label: 'Tools',
-    contents: [...tools],
+    contents: tools,
   },
   {
     label: 'Architecture',
-    contents: [...architecture],
+    contents: architecture,
   },
 ];
 
