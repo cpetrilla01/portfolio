@@ -47,7 +47,7 @@ export const Hero = () => (
           </IconButton>
         </Stack>
       </Box>
-      <Box>
+      <Box sx={{ maxWidth: { xs: '500px', md: '800px' } }}>
         <img src={heroImage} style={{ maxWidth: '100%' }} alt='' />
       </Box>
     </Stack>
