@@ -1,6 +1,8 @@
 import { SectionContainer } from '../common/SectionContainer';
-import { Box, Stack, Typography } from '@mui/material';
+import { Box, IconButton, Stack, Typography } from '@mui/material';
 import heroImage from '../../../assets/development.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 export const Hero = () => (
   <SectionContainer
@@ -28,6 +30,22 @@ export const Hero = () => (
           React Testing Library, and Vitest. I also have experience with
           back-end development through NodeJS.
         </Typography>
+        <Stack spacing={2} direction='row'>
+          <IconButton
+            href='https://www.linkedin.com/in/cpetrilla01/'
+            target='_blank'
+            sx={{ color: 'inherit', padding: '1rem' }}
+          >
+            <FontAwesomeIcon size='2xl' icon={faLinkedin} />
+          </IconButton>
+          <IconButton
+            href='https://github.com/cpetrilla01'
+            target='_blank'
+            sx={{ color: 'inherit', padding: '1rem' }}
+          >
+            <FontAwesomeIcon size='2xl' icon={faGithub} />
+          </IconButton>
+        </Stack>
       </Box>
       <Box>
         <img src={heroImage} style={{ maxWidth: '100%' }} alt='' />
