@@ -24,10 +24,10 @@ const navigationItemsData: { id: string; label: string }[] = [
     id: '#skills',
     label: 'Skills',
   },
-  {
-    id: '#about',
-    label: 'About',
-  },
+  // {
+  //   id: '#about',
+  //   label: 'About',
+  // },
 ];
 
 interface ScrollTopProps {
