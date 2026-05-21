@@ -1,6 +1,6 @@
 import { SectionContainer } from '../common/SectionContainer';
 import { Box, IconButton, Stack, Typography } from '@mui/material';
-import heroImage from '../../../assets/development.png';
+import heroImage from '../../images/development.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 
