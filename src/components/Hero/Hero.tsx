@@ -4,6 +4,22 @@ import heroImage from '../../../assets/development.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 
+interface IconLinkProps {
+  'aria-label': string;
+  href: string;
+  children: React.ReactNode;
+}
+
+const IconLink = ({ children, ...props }: IconLinkProps) => (
+  <IconButton
+    target='_blank'
+    sx={{ color: 'inherit', padding: '1rem' }}
+    {...props}
+  >
+    {children}
+  </IconButton>
+);
+
 export const Hero = () => (
   <SectionContainer
     sx={{
@@ -31,22 +47,18 @@ export const Hero = () => (
           back-end development through NodeJS.
         </Typography>
         <Stack spacing={2} direction='row'>
-          <IconButton
+          <IconLink
             aria-label='Visit my LinkedIn profile (opens in a new window)'
             href='https://www.linkedin.com/in/cpetrilla01/'
-            target='_blank'
-            sx={{ color: 'inherit', padding: '1rem' }}
           >
             <FontAwesomeIcon size='2xl' icon={faLinkedin} />
-          </IconButton>
-          <IconButton
+          </IconLink>
+          <IconLink
             aria-label='Visit my GitHub profile (opens in a new window)'
             href='https://github.com/cpetrilla01'
-            target='_blank'
-            sx={{ color: 'inherit', padding: '1rem' }}
           >
             <FontAwesomeIcon size='2xl' icon={faGithub} />
-          </IconButton>
+          </IconLink>
         </Stack>
       </Box>
       <Box sx={{ maxWidth: { xs: '500px', md: '800px' } }}>
