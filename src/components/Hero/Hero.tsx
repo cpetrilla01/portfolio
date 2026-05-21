@@ -62,7 +62,13 @@ export const Hero = () => (
         </Stack>
       </Box>
       <Box sx={{ maxWidth: { xs: '500px', md: '800px' } }}>
-        <img src={heroImage} style={{ maxWidth: '100%' }} alt='' />
+        <img
+          src={heroImage}
+          width='926'
+          height='721'
+          style={{ height: 'auto', maxWidth: '100%' }}
+          alt=''
+        />
       </Box>
     </Stack>
   </SectionContainer>
