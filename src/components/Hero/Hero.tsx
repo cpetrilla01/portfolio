@@ -32,6 +32,7 @@ export const Hero = () => (
         </Typography>
         <Stack spacing={2} direction='row'>
           <IconButton
+            aria-label='Visit my LinkedIn profile (opens in a new window)'
             href='https://www.linkedin.com/in/cpetrilla01/'
             target='_blank'
             sx={{ color: 'inherit', padding: '1rem' }}
@@ -39,6 +40,7 @@ export const Hero = () => (
             <FontAwesomeIcon size='2xl' icon={faLinkedin} />
           </IconButton>
           <IconButton
+            aria-label='Visit my GitHub profile (opens in a new window)'
             href='https://github.com/cpetrilla01'
             target='_blank'
             sx={{ color: 'inherit', padding: '1rem' }}
