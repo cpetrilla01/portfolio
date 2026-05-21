@@ -4,7 +4,7 @@ import { ThemeProvider, CssBaseline } from '@mui/material';
 import { Header } from './components/Header/Header';
 import { Hero } from './components/Hero/Hero';
 import { Skills } from './components/Skills/Skills';
-import { About } from './components/About/About';
+// import { About } from './components/About/About';
 import { Footer } from './components/Footer/Footer';
 
 const App = () => (
@@ -14,7 +14,7 @@ const App = () => (
       <Header />
       <Hero />
       <Skills />
-      <About />
+      {/*<About />*/}
       <Footer />
     </ThemeProvider>
   </>
