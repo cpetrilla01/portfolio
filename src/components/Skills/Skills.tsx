@@ -1,34 +1,17 @@
 import { SectionContainer } from '../common/SectionContainer';
-import { languages } from './languages.tsx';
-import { tools } from './tools.tsx';
-import { architecture } from './architecture.tsx';
-import { Box, Card, Container, Grid, Stack, Typography } from '@mui/material';
-
-export interface Skill {
-  icon?: React.ReactElement;
-  title: string;
-  description: string;
-}
-
-interface SkillSection {
-  label: string;
-  contents: Skill[];
-}
-
-const skillsSections: SkillSection[] = [
-  {
-    label: 'Languages',
-    contents: languages,
-  },
-  {
-    label: 'Tools',
-    contents: tools,
-  },
-  {
-    label: 'Architecture',
-    contents: architecture,
-  },
-];
+import { primarySkills } from './primarySkills.tsx';
+import type { PrimarySkill } from './primarySkills.tsx';
+import { secondarySkills } from './secondarySkills.tsx';
+import type { SecondarySkill } from './secondarySkills.tsx';
+import {
+  Box,
+  Card,
+  Chip,
+  Container,
+  Grid,
+  Stack,
+  Typography,
+} from '@mui/material';
 
 export const Skills = () => (
   <SectionContainer id='skills'>
@@ -36,42 +19,61 @@ export const Skills = () => (
       <Typography component='h2' variant='sectionHeader'>
         Skills
       </Typography>
-      {skillsSections.map((section, index) => (
-        <div key={index}>
+      <Stack spacing={{ xs: 4, lg: 10 }} direction={{ md: 'row' }}>
+        <Box sx={{ width: { xs: '100%', md: '60%' } }}>
           <Typography variant='h3' sx={{ my: 4 }}>
-            {section.label}
+            Languages
           </Typography>
-          <Box>
-            <Grid container spacing={4}>
-              {section.contents.map(({ icon, title, description }, index) => (
-                <Grid key={index} size={{ lg: 3, md: 4, sm: 6, xs: 12 }}>
-                  <Card
-                    elevation={3}
+          <Grid container spacing={4}>
+            {primarySkills.map(({ icon, title, description }: PrimarySkill) => (
+              <Grid key={title} size={{ xs: 12, md: 6 }}>
+                <Card
+                  elevation={3}
+                  sx={{
+                    height: '100%',
+                    p: 2,
+                  }}
+                >
+                  <Stack
+                    direction='row'
+                    spacing={1}
                     sx={{
-                      height: '100%',
-                      p: 2,
+                      alignItems: 'center',
                     }}
                   >
-                    <Stack
-                      direction='row'
-                      spacing={1}
-                      sx={{
-                        alignItems: 'center',
-                      }}
-                    >
-                      {icon && icon}
-                      <Typography component='h3' variant='h5' sx={{ py: 1 }}>
-                        {title}
-                      </Typography>
-                    </Stack>
-                    <Typography variant='body2'>{description}</Typography>
-                  </Card>
-                </Grid>
-              ))}
-            </Grid>
-          </Box>
-        </div>
-      ))}
+                    {icon}
+                    <Typography component='h3' variant='h5' sx={{ py: 1 }}>
+                      {title}
+                    </Typography>
+                  </Stack>
+                  <Typography variant='body2'>{description}</Typography>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+        <Box sx={{ width: { xs: '100%', md: '40%' } }}>
+          <Stack
+            direction='row'
+            sx={{ flexWrap: 'wrap', gap: 1, m: 0, p: 0 }}
+            component='ul'
+          >
+            {secondarySkills.map(({ icon, title }: SecondarySkill) => (
+              <Chip
+                color='primary'
+                icon={icon}
+                label={
+                  <Typography sx={{ color: 'inherit' }} component='span'>
+                    {title}
+                  </Typography>
+                }
+                key={title}
+                component='li'
+              />
+            ))}
+          </Stack>
+        </Box>
+      </Stack>
     </Container>
   </SectionContainer>
 );
