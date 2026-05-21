@@ -2,7 +2,7 @@ import { SectionContainer } from '../common/SectionContainer';
 import { languages } from './languages.tsx';
 import { tools } from './tools.tsx';
 import { architecture } from './architecture.tsx';
-import { Box, Card, Container, Grid, Typography } from '@mui/material';
+import { Box, Card, Container, Grid, Stack, Typography } from '@mui/material';
 
 export interface Skill {
   icon?: React.ReactElement;
@@ -52,10 +52,18 @@ export const Skills = () => (
                       p: 2,
                     }}
                   >
-                    {icon && icon}
-                    <Typography component='h3' variant='h5' sx={{ py: 1 }}>
-                      {title}
-                    </Typography>
+                    <Stack
+                      direction='row'
+                      spacing={1}
+                      sx={{
+                        alignItems: 'center',
+                      }}
+                    >
+                      {icon && icon}
+                      <Typography component='h3' variant='h5' sx={{ py: 1 }}>
+                        {title}
+                      </Typography>
+                    </Stack>
                     <Typography variant='body2'>{description}</Typography>
                   </Card>
                 </Grid>
