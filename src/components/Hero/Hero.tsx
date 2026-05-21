@@ -28,7 +28,7 @@ export const Hero = () => (
     }}
   >
     <Stack
-      spacing={10}
+      spacing={{ xs: 4, lg: 10 }}
       direction={{ md: 'row' }}
       sx={{
         justifyContent: 'center',
