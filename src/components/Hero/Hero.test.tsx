@@ -5,7 +5,7 @@ describe('Hero', () => {
   test('Hero element', () => {
     render(<Hero />);
 
-    const textElement = screen.getByText(/this text does not exist/i);
+    const textElement = screen.getByText(/Hi, I'm Chris!/i);
 
     expect(textElement).toBeInTheDocument();
   });
