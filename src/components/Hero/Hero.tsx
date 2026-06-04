@@ -36,7 +36,11 @@ export const Hero = () => (
       }}
     >
       <Box sx={{ maxWidth: '500px' }}>
-        <Typography sx={{ color: 'inherit' }} variant='subtitle1'>
+        <Typography
+          sx={{ color: 'inherit' }}
+          variant='subtitle1'
+          component='h2'
+        >
           Hi, I'm Chris!
         </Typography>
         <Typography sx={{ color: 'inherit' }} variant='body1'>

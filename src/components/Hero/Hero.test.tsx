@@ -1,12 +1,12 @@
 import { render, screen } from '@testing-library/react';
 import { Hero } from './Hero.tsx';
 
-describe('Hero', () => {
-  test('Hero element', () => {
+describe('Hero component', () => {
+  test('renders heading element', () => {
     render(<Hero />);
 
-    const textElement = screen.getByText(/Hi, I'm Chris!/i);
+    const headingElement = screen.getByRole('heading', { level: 2 });
 
-    expect(textElement).toBeInTheDocument();
+    expect(headingElement).toHaveTextContent(/Hi, I'm Chris!/);
   });
 });
