@@ -23,6 +23,7 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
 
+    /* Fix type errors in WebStorm */
     "types": ["vitest/globals", "@testing-library/jest-dom"]
   },
   "include": ["src"]
