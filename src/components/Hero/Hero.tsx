@@ -3,6 +3,7 @@ import { Box, IconButton, Stack, Typography } from '@mui/material';
 import heroImage from '../../images/development.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import React from 'react';
 
 interface IconLinkProps {
   'aria-label': string;
