@@ -7,7 +7,7 @@ describe('Hero', () => {
 
     const headingElement = screen.getByRole('heading', { level: 2 });
 
-    expect(headingElement).toHaveTextContent(/Hi, I'm Chris!/);
+    expect(headingElement).toHaveTextContent(/Hi, I'm Chris!/i);
   });
 
   test('shows accessible links', () => {
