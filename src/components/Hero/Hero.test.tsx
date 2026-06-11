@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { Hero } from './Hero.tsx';
 
-describe('Hero component', () => {
+describe('Hero', () => {
   test('renders heading element', () => {
     render(<Hero />);
 
