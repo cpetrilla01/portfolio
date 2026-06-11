@@ -13,11 +13,9 @@ import {
   Typography,
   useScrollTrigger,
 } from '@mui/material';
-import {
-  KeyboardArrowLeft as KeyboardArrowLeftIcon,
-  KeyboardArrowUp as KeyboardArrowUpIcon,
-  Menu as MenuIcon,
-} from '@mui/icons-material';
+import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import MenuIcon from '@mui/icons-material/Menu';
 
 const navigationItemsData: { id: string; label: string }[] = [
   {
