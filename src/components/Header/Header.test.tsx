@@ -38,9 +38,21 @@ describe('Header', () => {
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
   });
 
+  it('closes drawer when link is clicked', async () => {
+    const user = userEvent.setup();
+
+    render(<Header />);
+
+    await user.click(screen.getByLabelText(/Open drawer/i));
+    await user.click(screen.getAllByText('Skills')[1]);
+
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+  });
+
   it('renders a scroll-to-top FAB', () => {
     render(<Header />);
 
+    expect(screen.getByTestId('back-to-top-anchor')).toBeInTheDocument();
     expect(screen.getByLabelText(/scroll back to top/i)).toBeInTheDocument();
   });
 });

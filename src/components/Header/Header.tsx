@@ -40,13 +40,11 @@ function ScrollTop(props: ScrollTopProps) {
   });
 
   const handleClick = () => {
-    const anchor = document.querySelector('#back-to-top-anchor');
+    const anchor = document.getElementById('back-to-top-anchor');
 
-    if (anchor) {
-      anchor.scrollIntoView({
-        block: 'center',
-      });
-    }
+    anchor?.scrollIntoView({
+      block: 'center',
+    });
   };
 
   return (
@@ -71,12 +69,12 @@ export const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const handleDrawerToggle = () => {
-    setDrawerOpen(!drawerOpen);
+    setDrawerOpen((prevState) => !prevState);
   };
 
   return (
     <>
-      <div id='back-to-top-anchor' />
+      <div id='back-to-top-anchor' data-testid='back-to-top-anchor' />
       <AppBar component='nav' position='sticky'>
         <Toolbar>
           <Box sx={{ display: { sm: 'none' } }}>
@@ -117,7 +115,7 @@ export const Header = () => {
         <Drawer
           ModalProps={{ keepMounted: true }}
           open={drawerOpen}
-          onClose={() => setDrawerOpen(false)}
+          onClose={handleDrawerToggle}
           sx={{
             display: { xs: 'block', sm: 'none' },
             '& .MuiDrawer-paper': { width: '80%' },
