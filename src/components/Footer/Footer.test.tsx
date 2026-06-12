@@ -5,6 +5,6 @@ describe('Footer', () => {
   it('renders a footer element (contentinfo)', () => {
     render(<Footer />);
 
-    expect(screen.getByRole('---')).toBeInTheDocument();
+    expect(screen.getByRole('contentinfo')).toBeInTheDocument();
   });
 });
