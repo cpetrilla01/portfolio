@@ -26,5 +26,6 @@
     /* Fix type errors in WebStorm */
     "types": ["vitest/globals", "@testing-library/jest-dom"]
   },
-  "include": ["src"]
+  "include": ["src**/*", "vite.config.ts", "vitest.setup.ts"],
+  "exclude": ["node_modules", "dist", "coverage"]
 }
