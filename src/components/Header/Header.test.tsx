@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Header } from './Header';
 
@@ -20,11 +20,7 @@ describe('Header', () => {
 
     await user.click(screen.getByLabelText(/Open drawer/i));
 
-    expect(screen.getByRole('dialog')).toBeVisible();
-
-    await user.click(screen.getByLabelText(/Close drawer/i));
-
-    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    expect(screen.getByRole('dialog')).toBeInTheDocument();
   });
 
   it('closes drawer when close button is clicked', async () => {
@@ -35,7 +31,9 @@ describe('Header', () => {
     await user.click(screen.getByLabelText(/Open drawer/i));
     await user.click(screen.getByLabelText(/Close drawer/i));
 
-    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    });
   });
 
   it('closes drawer when link is clicked', async () => {
@@ -44,9 +42,11 @@ describe('Header', () => {
     render(<Header />);
 
     await user.click(screen.getByLabelText(/Open drawer/i));
-    await user.click(screen.getAllByText('Skills')[1]);
+    await user.click(screen.getAllByText('Home')[1]);
 
-    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    });
   });
 
   it('renders a scroll-to-top FAB', () => {

@@ -19,13 +19,13 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 const navigationItemsData: { id: string; label: string }[] = [
   {
-    id: '#skills',
-    label: 'Skills',
+    id: '/#/',
+    label: 'Home',
   },
-  // {
-  //   id: '#about',
-  //   label: 'About',
-  // },
+  {
+    id: '/#/about',
+    label: 'About',
+  },
 ];
 
 interface ScrollTopProps {
@@ -93,7 +93,7 @@ export const Header = () => {
             sx={{ color: 'inherit', flexGrow: 1, textTransform: 'uppercase' }}
             variant='h6'
           >
-            <Link sx={{ color: 'inherit' }} href='/' underline='none'>
+            <Link sx={{ color: 'inherit' }} href='/#/' underline='none'>
               Christopher Petrilla
             </Link>
           </Typography>
@@ -113,14 +113,12 @@ export const Header = () => {
       </AppBar>
       <Box component='nav'>
         <Drawer
-          ModalProps={{ keepMounted: true }}
           open={drawerOpen}
           onClose={handleDrawerToggle}
           sx={{
             display: { xs: 'block', sm: 'none' },
             '& .MuiDrawer-paper': { width: '80%' },
           }}
-          variant='temporary'
         >
           <Toolbar>
             <IconButton
